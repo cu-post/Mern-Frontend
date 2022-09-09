@@ -16,6 +16,7 @@ import NuevoColaborador from './paginas/NuevoColaborador'
 
 import {AuthProvider} from './context/AuthProvider'
 import {ProyectosProvider} from './context/ProyectosProvider'
+import {ReferenciaProvider} from './context/ReferenciaProvider'
 
 
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <ReferenciaProvider>
         <ProyectosProvider>
           <Routes>
               <Route path="/" element={<AuthLayout />}>
@@ -44,6 +46,7 @@ function App() {
               </Route>
           </Routes>
         </ProyectosProvider>
+        </ReferenciaProvider>
       </AuthProvider>
     </BrowserRouter>
   )

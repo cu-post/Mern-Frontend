@@ -24,6 +24,7 @@ const ReferenciaProvider = ({children}) => {
     useEffect(() => {
         const LoadReferences = async () => {
             const { data } = await clienteAxios('/reference')
+            console.log(data)
             setRef(data)
             }
       
