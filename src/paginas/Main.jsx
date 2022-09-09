@@ -1,27 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import PreviewReferencia from '../components/PreviewReferencia';
-import clienteAxios from '../config/clienteAxios'
+import useReferencia from '../hooks/useReferencia';
 
 const Main = () => {
-    
-    const [ ref1, setRef] = useState([]);
-    console.log(ref1)
-
-    useEffect(() => {
-      const LoadReferences = async () => {
-          const { data } = await clienteAxios('/reference')
-          
-          setRef(data)
-          }
-    
-      LoadReferences()
-      }, [])
+    const { ref } = useReferencia()
+    console.log(ref)
 
     return (
       <>
       <div className="shadow rounded-lg flex-row w-[1365px] grid grid-cols-5 text-[22.8px] text-white">
-        {ref1.length ? 
-          ref1.map((reff, index) => (
+        {ref.length ? 
+          ref.map((reff, index) => (
             <PreviewReferencia 
                       key={index}
                       reff={reff}
