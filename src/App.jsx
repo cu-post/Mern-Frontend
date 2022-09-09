@@ -27,25 +27,25 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <ReferenciaProvider>
-        <ProyectosProvider>
-          <Routes>
-              <Route path="/" element={<AuthLayout />}>
-                  <Route index element={<Main />} />
-                  <Route path="registrar" element={<Registrar />} />
-                  <Route path="olvide-password" element={<OlvidePassword />} />
-                  <Route path="olvide-password/:token" element={<NuevoPassword />} />
-                  <Route path="confirmar/:id" element={<ConfirmarCuenta />} />
-              </Route>
+          <ProyectosProvider>
+            <Routes>
+                <Route path="/" element={<AuthLayout />}>
+                    <Route index element={<Main />} />
+                    <Route path="registrar" element={<Registrar />} />
+                    <Route path="olvide-password" element={<OlvidePassword />} />
+                    <Route path="olvide-password/:token" element={<NuevoPassword />} />
+                    <Route path="confirmar/:id" element={<ConfirmarCuenta />} />
+                </Route>
 
-              <Route path="/proyectos" element={<RutaProtegida />}>
-                  <Route index element={<Proyectos />} />
-                  <Route path="crear-proyecto" element={<NuevoProyecto />} />
-                  <Route path="nuevo-colaborador/:id" element={<NuevoColaborador />} />
-                  <Route path=":id" element={<Proyecto />} />
-                  <Route path="editar/:id" element={<EditarProyecto />} />
-              </Route>
-          </Routes>
-        </ProyectosProvider>
+                <Route path="/proyectos" element={<RutaProtegida />}>
+                    <Route index element={<Proyectos />} />
+                    <Route path="crear-proyecto" element={<NuevoProyecto />} />
+                    <Route path="nuevo-colaborador/:id" element={<NuevoColaborador />} />
+                    <Route path=":id" element={<Proyecto />} />
+                    <Route path="editar/:id" element={<EditarProyecto />} />
+                </Route>
+            </Routes>
+          </ProyectosProvider>
         </ReferenciaProvider>
       </AuthProvider>
     </BrowserRouter>
