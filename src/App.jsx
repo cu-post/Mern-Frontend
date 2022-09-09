@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthLayout from './layouts/AuthLayout'
 import RutaProtegida from './layouts/RutaProtegida'
 
-import Login from './paginas/Login'
+import Main from './paginas/Main'
 import Registrar from './paginas/Registrar'
 import OlvidePassword from './paginas/OlvidePassword'
 import NuevoPassword from './paginas/NuevoPassword'
@@ -28,7 +28,7 @@ function App() {
         <ProyectosProvider>
           <Routes>
               <Route path="/" element={<AuthLayout />}>
-                  <Route index element={<Login />} />
+                  <Route index element={<Main />} />
                   <Route path="registrar" element={<Registrar />} />
                   <Route path="olvide-password" element={<OlvidePassword />} />
                   <Route path="olvide-password/:token" element={<NuevoPassword />} />
