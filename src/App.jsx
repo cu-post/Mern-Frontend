@@ -1,56 +1,54 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import AuthLayout from './layouts/Authlayout'
-import AuthLayoutAdmin from './layouts/AuthLayoutAdmin'
+import AuthLayout from './layouts/AuthLayout'
+import RutaProtegida from './layouts/RutaProtegida'
 
-import AuthLayoutMobile from './layouts/AuthLayoutMobile'
-import AuthLayoutMobileAdmin from './layouts/AuthLayoutMobileAdmin'
 import Main from './paginas/Main'
-import MainMobile from './paginasAdmin/MainMobile'
-import FormPreviewMobile from './paginas/FormPreviewMobile'
-import FormPreviewMobileAdmin from './paginasAdmin/FormPreviewMobileAdmin'
-import MainAdmin from './paginasAdmin/MainAdmin'
+import Registrar from './paginas/Registrar'
+import OlvidePassword from './paginas/OlvidePassword'
+import NuevoPassword from './paginas/NuevoPassword'
+import ConfirmarCuenta from './paginas/ConfirmarCuenta'
+import Proyectos from './paginas/Proyectos'
+import NuevoProyecto from './paginas/NuevoProyecto'
+import Proyecto from './paginas/Proyecto'
+import EditarProyecto from './paginas/EditarProyecto'
+import NuevoColaborador from './paginas/NuevoColaborador'
 
-import Login from './paginas/Login'
+import {AuthProvider} from './context/AuthProvider'
+import {ProyectosProvider} from './context/ProyectosProvider'
+import {ReferenciaProvider} from './context/ReferenciaProvider'
 
-import { AuthProvider } from './context/AuthProvider'
-import { ReferenciaProvider } from './context/ReferenciaProvider'
+
 
 function App() {
+
+
   return (
-    <div className='App'>        
-      <BrowserRouter>
-        <AuthProvider>  
-          <ReferenciaProvider>
-            <Routes>
-
-              <Route path="/login" element={<Login />}>
-              </Route>
-
+    <BrowserRouter>
+      <AuthProvider>
+        <ReferenciaProvider>
+        <ProyectosProvider>
+          <Routes>
               <Route path="/" element={<AuthLayout />}>
-                <Route index element={<Main />} />
+                  <Route index element={<Main />} />
+                  <Route path="registrar" element={<Registrar />} />
+                  <Route path="olvide-password" element={<OlvidePassword />} />
+                  <Route path="olvide-password/:token" element={<NuevoPassword />} />
+                  <Route path="confirmar/:id" element={<ConfirmarCuenta />} />
               </Route>
 
-              <Route path="/mobile/:id" element={<AuthLayoutMobile/>}>
-                <Route index element={<MainMobile />} />            
-                <Route path="modelo/:id" element={<FormPreviewMobile />} />
+              <Route path="/proyectos" element={<RutaProtegida />}>
+                  <Route index element={<Proyectos />} />
+                  <Route path="crear-proyecto" element={<NuevoProyecto />} />
+                  <Route path="nuevo-colaborador/:id" element={<NuevoColaborador />} />
+                  <Route path=":id" element={<Proyecto />} />
+                  <Route path="editar/:id" element={<EditarProyecto />} />
               </Route>
-
-              <Route path="/perfil" element={<AuthLayoutAdmin/>}>
-                <Route index element={<MainAdmin />} />
-                
-              </Route>
-
-              <Route path="/mobileAdmin/:id" element={<AuthLayoutMobileAdmin/>}>
-                <Route index element={<MainMobile />} />                          
-                <Route path="modelo/:id" element={<FormPreviewMobileAdmin />} />
-              </Route>
-
-            </Routes>
-          </ReferenciaProvider>
-        </AuthProvider>  
-      </BrowserRouter>
-    </div>
+          </Routes>
+        </ProyectosProvider>
+        </ReferenciaProvider>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 
