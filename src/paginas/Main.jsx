@@ -15,7 +15,7 @@ const Main = () => {
           }
     
       LoadReferences()
-      }, [Main])
+      }, [])
 
     return (
       <>
