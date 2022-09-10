@@ -7,7 +7,7 @@ const AuthLayoutMobile = () => {
     return (
         <>
         <div className=''>
-            <div className='flex flex-col md:flex-row justify-center lg:gap-[459px] hlg:-[84px] lg:mt-[34px] relative'>
+            <div className='flex flex-col md:flex-row justify-center lg:gap-[459px] lg:h-[84px] lg:mt-[34px] relative'>
             <HeaderMobile />
             </div>
             <div className=''>
