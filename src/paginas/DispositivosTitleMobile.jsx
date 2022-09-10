@@ -1,20 +1,18 @@
 import useReferencia from '../hooks/useReferencia';
 import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
-
 
 const DispositivosTitleMobile = () => {
 
   const params = useParams();
-  const { LoadReference, ref1, mobile } = useReferencia()
+  const { ref } = useReferencia()
 
-  useEffect( () => {
-    LoadReference(mobile.referenceId ? mobile.referenceId : params.id)
-  }, [mobile.referenceId])
+  const reference = ref.filter(function(el){
+    return (el.id == params.id)
+  })  
 
     return (
       <>     
-        <span className='font-bold w-3/5 text-3xl p-4 items-center flex'>{ref1.reference}</span>
+        <span className='font-bold w-3/5 text-3xl p-4 items-center flex'>{reference.map(x => x.reference)}</span>
         <a className='font-bold text-3xl w-2/2 p-4'
         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}`}
         >
