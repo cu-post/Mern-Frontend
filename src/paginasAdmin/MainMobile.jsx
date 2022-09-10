@@ -14,8 +14,8 @@ const Main = () => {
 
     return (
       <>
-        <div className="shadow rounded-lg flex-row w-[1365px] grid lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3
-       justify-center text-[22.8px] text-white">
+        <div className="shadow rounded-lg flex-col w-[1365px] flex sm:grid lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+       justify-center items-center text-[22.8px] text-white">
           {
             mobilefiltrado.map((mobiles, index) => (
               <PreviewReferenciaMobile
