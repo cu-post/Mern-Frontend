@@ -12,7 +12,7 @@ const DispositivosTitleMobile = () => {
 
     return (
       <>     
-        <span className='font-bold w-3/5 text-3xl p-4 items-center flex'>{reference.map(x => x.reference)}</span>
+        <span className='font-bold w-[1440px] text-3xl p-4 md:ml-20 justify-center flex md:justify-between'>{reference.map(x => x.reference)}</span>
         <a className='font-bold text-3xl w-2/2 p-4'
         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}`}
         >

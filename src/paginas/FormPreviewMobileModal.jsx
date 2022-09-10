@@ -11,16 +11,29 @@ const FormPreviewMobile = () => {
         LoadReference(params.id)
     }, [params.id])
 
+    const refresh = () => {
+        try {                     
+            location.reload();
+        } catch (error) {
+            
+        }
+        
+    }
+
     return (
     <>
-        <div className='w-[884.49px] h-[706.83px] bg-[#FF5E59] flex flex-row p-[12px] gap-[24.83px] rounded-[19.27px] items-center'>
+        <div className='lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] lg:flex lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] lg:items-center'>
             <iframe width="432.89" height="660.25"
             src={mobiles2.video}
             className='my-[11.29px] rounded-[19.27px] gap-[15.41px]'
             title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen>
-            </iframe>
-            <div className='flex flex-col items-center ml-20'>
+            </iframe>            
+            <button 
+            onClick={refresh}
+            className='hidden lg:visible h-fit w-fit bg-[#8F00FF] items-center lg:flex rounded-[30px]
+            justify-center text-white py-[7px] px-[15px] gap-[10px] lg:fixed lg:top-0'>Cerrar</button> 
+            <div className='flex flex-col items-end ml-20 w-fit h-fit'>
                 <div className='text-[40.63px] text-white'>
                     {ref1.reference}
                 </div>
