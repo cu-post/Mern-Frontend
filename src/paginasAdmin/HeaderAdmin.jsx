@@ -29,7 +29,7 @@ const HeaderAdmin = () => {
           onClick={handleCerrarSesion}
           className='p-3 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59] '
           >
-              <img src="../public/exit_to_app.png" alt="" />
+              <img src="../exit_to_app.png" alt="" />
           </button>
           <div className='flex flex-col'>
           <input
