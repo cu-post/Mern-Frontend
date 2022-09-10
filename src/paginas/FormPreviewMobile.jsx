@@ -6,10 +6,14 @@ const FormPreviewMobile = () => {
 
     const params = useParams();
     const { LoadMobile, mobile, ref1} = useReferencia()
+
+    console.log(ref1)
     
     useEffect( () => {
         LoadMobile(params.id)
     }, [])
+
+    console.log(mobile)
 
     return (
     <>
