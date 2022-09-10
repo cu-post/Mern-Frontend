@@ -1,15 +1,15 @@
 import useReferencia from '../hooks/useReferencia';
-import {useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const HeaderAdmin = () => {
 
   const [ busqueda, setBusqueda ] = useState('')
-  const { mobiles } = useReferencia()
+  const { mobiles2 } = useReferencia()
   const params = useParams();
   const id = params.id
 
-  const usuariosFiltrados = busqueda === '' ? [] : mobiles.filter(function(el){
+  const usuariosFiltrados = busqueda === '' ? [] : mobiles2.filter(function(el){
     return (el.referenceId == id)
   })
 
@@ -20,7 +20,7 @@ const HeaderAdmin = () => {
           <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
       <div className="flex flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
-        {id}{mobiles.code}
+        {id}{mobiles2.code}
           <div className='flex flex-col'>
           <input
           className="bg-[#FF5E59] placeholder-white pt-[16.0377px] pb-[16.0377px] pl-[16.0377px] gap-[16.04px]
