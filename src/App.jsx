@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import AuthLayout from './layouts/AuthLayout'
-import RutaProtegida from './layouts/RutaProtegida'
+import AuthLayoutAdmin from './layouts/AuthLayoutAdmin'
 //Pagina Principal Usuario
 import Main from './paginas/Main'
 // Login Secreto Admin
@@ -27,8 +27,8 @@ function App() {
                 <Route path="/login" element={<Login />}>
                 </Route>
 
-                <Route path="/proyectos" element={<RutaProtegida />}>
-                    <Route index element={<Main />} />
+                <Route path="/perfil" element={<AuthLayoutAdmin />}>
+                    <Route index element={<MainAdmin />} />
                 </Route>
             </Routes>
         </ReferenciaProvider>
