@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 const FormularioReferenciaAdminMobile = () => {
     const params = useParams();
 
-    const { submitReferenciaMobile} = useReferencia();   
+    const { nuevoReferenciaMobile} = useReferencia();   
 
     const referenceId = params.id
     const [video, setVideo] = useState('')
@@ -15,9 +15,10 @@ const FormularioReferenciaAdminMobile = () => {
         e.preventDefault();
 
         // Pasar los datos hacia el provider
-        await submitReferenciaMobile({referenceId, video})
+        await nuevoReferenciaMobile({referenceId, video, code})
 
         setVideo('')
+        setCode('')
     }
 
     const refresh = () => {
@@ -62,6 +63,22 @@ const FormularioReferenciaAdminMobile = () => {
                             placeholder={video}
                             value={video}
                             onChange={e => setVideo(e.target.value)}
+                        />                       
+                    </div>
+
+                    <div className='mb-5 flex flex-col'>
+                        <label
+                            className="text-white uppercase font-bold text-sm"
+                            htmlFor="vid"
+                        >Codigo</label>
+
+                        <input
+                            id="vid"
+                            type="number"
+                            className="border w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                            placeholder={code}
+                            value={code}
+                            onChange={e => setCode(e.target.value)}
                         />                       
                     </div>
 
