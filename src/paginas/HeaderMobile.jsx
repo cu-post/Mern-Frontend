@@ -10,6 +10,7 @@ const HeaderAdmin = () => {
   const id = params.id
   console(id)
   console.log(mobiles.code)
+  console.log(mobiles)
 
   const usuariosFiltrados = busqueda === '' ? [] : mobiles.filter(function(el){
     return (el.referenceId == id)
