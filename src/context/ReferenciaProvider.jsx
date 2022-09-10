@@ -37,8 +37,8 @@ const ReferenciaProvider = ({children}) => {
     }
 
     useEffect(() => {
-        const LoadMobiles = async id => {
-            const { data } = await clienteAxios(`/mobile/${id}`)
+        const LoadMobiles = async () => {
+            const { data } = await clienteAxios(`/mobile/`)
             setMobiles(data)
             }
       
@@ -64,7 +64,7 @@ const ReferenciaProvider = ({children}) => {
 
     const editarReferenciaMobile = async ref1 => {    
         try {
-          const { data } = await clienteAxios.patch(`/mobile/${ref1.code}`, ref1)
+          const { data } = await clienteAxios.patch(`/mobile/${ref1.id}`, ref1)
           setMobiles([data])     
           window.location.reload();
           } catch (error) {
@@ -95,7 +95,7 @@ const ReferenciaProvider = ({children}) => {
                 }
             }
 
-            const { data } = await clienteAxios.delete(`/mobile/${mobile.code}`, config)
+            const { data } = await clienteAxios.delete(`/mobile/${mobile.id}`, config)
 
             // Sincronizar el state
             const mobileActualizados = mobiles.filter(mobilesState => mobilesState.code !== mobile.code )
