@@ -11,7 +11,7 @@ const PreviewReferencia = ({mobiles2}) => {
 
   return (
   <>
-    <div className='bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[262.17px] gap-1 p-1 rounded-[24.43px] justify-center flex flex-col m-2'>
+    <div className='bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[240.17px] gap-1 p-1 rounded-[24.43px] justify-center flex flex-col m-2'>
       <div className='flex justify-end mt-6 mr-1 mb-[-20px] relative'>
         <button 
         onClick={() => handleModalEditarMobileadmin(mobiles2)}
@@ -19,7 +19,7 @@ const PreviewReferencia = ({mobiles2}) => {
           Editar
         </button>
       </div>
-      <div className="flex justify-center flex-col h-fit w-fit ml-9">
+      <div className="flex justify-center flex-col h-fit w-fit ml-7">
         <div className='flex justify-center items-center flex-col'>
         <iframe className="absolute" width="190" height="335">
         </iframe>

@@ -10,7 +10,7 @@ const PreviewReferencia = ({mobiles2}) => {
 
   return (
   <>
-    <div className='bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[262.17px] gap-1 p-1 rounded-[24.43px] flex justify-center items-center flex-col m-2'>
+    <div className='bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[240.17px] gap-1 p-1 rounded-[24.43px] flex justify-center items-center flex-col m-2'>
       <div className='flex justify-end mt-6 mb-[-20px] relative'>
       </div>
       <div className="flex justify-center flex-col h-fit w-fit  mt-5">
