@@ -6,7 +6,6 @@ const FormPreviewMobileAdmin = () => {
 
     const params = useParams();
     const { LoadMobile, mobile, ref1} = useReferencia()
-    console.log("existo")
     
     useEffect( () => {
         LoadMobile(params.id)
