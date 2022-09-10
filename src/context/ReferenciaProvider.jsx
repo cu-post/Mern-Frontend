@@ -47,7 +47,7 @@ const ReferenciaProvider = ({children}) => {
 
     
     const LoadMobile = async id => {
-        const { data } = await clienteAxios(`/modelo/${id}`)
+        const { data } = await clienteAxios(`/mobile/modelo/${id}`)
         setMobile(data)
     }    
 
