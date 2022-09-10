@@ -6,8 +6,8 @@ const Main = () => {
 
     return (
       <>
-      <div className="shadow rounded-lg flex-row w-[1365px] grid lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3
-       justify-center text-[22.8px] text-white">
+      <div className="shadow rounded-lg flex-col flex items-center w-[1365px] sm:grid lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+        text-[22.8px] text-white">
         {
           ref.map((reff, index) => (
             <PreviewReferencia 
