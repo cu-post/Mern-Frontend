@@ -5,11 +5,11 @@ import { useParams } from 'react-router-dom'
 const HeaderAdmin = () => {
 
   const [ busqueda, setBusqueda ] = useState('')
-  const { mobiles2 } = useReferencia()
+  const { mobiles } = useReferencia()
   const params = useParams();
   const id = params.id
 
-  const usuariosFiltrados = busqueda === '' ? [] : mobiles2.filter(function(el){
+  const usuariosFiltrados = busqueda === '' ? [] : mobiles.filter(function(el){
     return (el.referenceId == id)
   })
 
@@ -20,7 +20,7 @@ const HeaderAdmin = () => {
           <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
       <div className="flex flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
-        {id}{mobiles2.code}
+        {id}{mobiles.code}
           <div className='flex flex-col'>
           <input
           className="bg-[#FF5E59] placeholder-white pt-[16.0377px] pb-[16.0377px] pl-[16.0377px] gap-[16.04px]
@@ -34,7 +34,7 @@ const HeaderAdmin = () => {
             <div className="flex-col">
                 {usuariosFiltrados.map( mobiles => (
                     <a
-                        key={mobiles.code}
+                        key={mobiles.id}
                         value={mobiles}
                         className="w-1/2"
                         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${id}/modelo/${mobiles.code}`}
