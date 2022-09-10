@@ -19,7 +19,7 @@ const FormPreviewMobile = () => {
 
     return (
     <>
-        <div className='w-[884.49px] h-[706.83px] bg-[#FF5E59] flex flex-row p-[12px] gap-[24.83px] rounded-[19.27px] items-center'>
+        <div className='w-fit lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] flex flex-col lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] items-center'>
             <iframe width="432.89" height="660.25"
             src={mobile.video}
             className='my-[11.29px] rounded-[19.27px] gap-[15.41px]'
