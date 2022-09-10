@@ -34,12 +34,27 @@ const FormularioReferenciaAdminEditarMobile = () => {
         } 
     }
 
+    const refresh = () => {
+        try {                     
+            location.reload();
+        } catch (error) {
+            
+        }
+        
+    }
+
 
     return (
-            <form 
-                className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
+    <>
+    <button 
+                    onClick={refresh}
+                    className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
+                    justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
+                </button> 
+    <form 
+                className="bg-[#FF5E59] items-center flex flex-col w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
-            >   <button onClick={handleClick}>Eliminar la referencia {code}?</button>
+            >   
 
                     <div className='mb-5'>
                         <label
@@ -57,7 +72,7 @@ const FormularioReferenciaAdminEditarMobile = () => {
                         />
                     </div>
 
-                    <div className='mb-5 flex flex-col'>
+                    <div className='mb-5 w-full'>
                         <label
                             className="text-white uppercase font-bold text-sm"
                             htmlFor="vid"
@@ -79,7 +94,14 @@ const FormularioReferenciaAdminEditarMobile = () => {
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                         
                     />
+                    <div>
+                        <button 
+                    className='bg-white w-fit px-4 mt-2 justify-center text-[#8F00FF] font-semibold text-[14.9167px] rounded-[22.38px]'
+                    onClick={handleClick}>Eliminar la referencia {code}?</button>                    
+                    </div>
             </form>
+    </>
+            
     )
 }
 

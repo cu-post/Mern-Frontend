@@ -10,7 +10,7 @@ const ModalEditarMobileAdmin = () => {
  
     return (
         <Transition.Root show={ modalEditarMobileAdmin } as={Fragment}>
-            <Dialog as="div" className="fixed inset-0 " onClose={ HandleEditarMobileAdmin }>
+            <Dialog as="div" className="fixed inset-0 overflow-visible" onClose={ HandleEditarMobileAdmin }>
                 <div className="flex justify-center text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
@@ -27,7 +27,7 @@ const ModalEditarMobileAdmin = () => {
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="overflow-visible sm:inline-block sm:align-middle sm:h-screen" aria-hidden="false">
+                    <span className="overflow-visible inline-block align-middle h-screen" aria-hidden="false">
                         &#8203;
                     </span>
 
@@ -42,20 +42,7 @@ const ModalEditarMobileAdmin = () => {
                     >
                             <div className="inline-block align-bottom rounded-lg px-4 pt-5 pb-4 text-left transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
 
-                            <div className="overflow-visible sm:block absolute top-0 right-0 pt-4 pr-4">
-                                <button
-                                    type="button"
-                                    className="bg-white rounded-md absolute flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                    onClick={ HandleEditarMobileAdmin }
-                                >
-                                <span className="sr-only">Cerrar</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <div className="sm:flex sm:items-start flex justify-center w-full">
+                            <div className="flex justify-center w-full">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900 ">
                                         
