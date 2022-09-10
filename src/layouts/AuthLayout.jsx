@@ -7,11 +7,11 @@ const AuthLayout = () => {
   return (
     <>
     <div className=''>
-        <div className='flex flex-col md:flex-row justify-center lg:gap-[459px] hlg:-[84px] lg:mt-[34px] absolute'>
+        <div className='flex flex-col md:flex-row justify-center lg:gap-[459px] hlg:-[84px] lg:mt-[34px] lg:relative'>
         <Header />
         </div>
         <div>
-            <div className='invisible lg:visible lg:fixed flex lg:flex-row lg:justify-center lg:h-[390px]'>
+            <div className='invisible lg:visible absolute lg:relative flex lg:flex-row lg:justify-center lg:h-[390px]'>
                 <Banner />                
             </div>
             <div className='flex flex-row justify-center h-fit'>
