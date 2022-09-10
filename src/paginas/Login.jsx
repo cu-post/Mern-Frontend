@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import { Link,  useNavigate } from 'react-router-dom'
-import Alerta from '../components/Alerta'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import clienteAxios from '../config/clienteAxios'
-import useAuth from '../hooks/useAuth';
+import useAuth from '../hooks/useAuth'
 
 const Login = () => {
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [alerta, setAlerta] = useState({})
 
     const { setAuth } = useAuth();
 
@@ -16,94 +14,67 @@ const Login = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
-        if([email, password].includes('')) {
-            setAlerta({
-                msg: 'Todos los campos son obligatorios',
-                error: true
-            });
-            return
-        }
-
-
-
         try {
-            const { data } = await clienteAxios.post('/usuarios/login', { email, password})
-            setAlerta({})
+            const { data } = await clienteAxios.post('/user/login', { username, password})
             localStorage.setItem('token', data.token)
             setAuth(data)
-            navigate('/proyectos')
+            navigate('/perfil')
         } catch (error) {
-            setAlerta({
-                msg: error.response.data.msg,
-                error: true
-            })
+            console.log(error)
         }
 
     }
 
-    const { msg } = alerta
-
   return (
     <>
-        <h1 className="text-sky-600 font-black text-6xl capitalize">Inicia sesión y administra tus {''}
-            <span className="text-slate-700">proyectos</span>
-        </h1>
-
-        {msg && <Alerta alerta={alerta } />}
-    
-        <form 
-            className="my-10 bg-white shadow rounded-lg p-10"
-            onSubmit={handleSubmit}
-        >
-            <div className="my-5">
-                <label 
-                    className="uppercase text-gray-600 block text-xl font-bold"
-                    htmlFor="email"
-                >Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="Email de Registro"
-                    className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
-                    value={email}
-                    onChange={ e => setEmail(e.target.value)}
-                />
-            </div>
-            <div className="my-5">
-                <label 
-                    className="uppercase text-gray-600 block text-xl font-bold"
-                    htmlFor="password"
-                >Password</label>
-                <input
-                    id="password"
-                    type="password"
-                    placeholder="Password de Registro"
-                    className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
-                    value={password}
-                    onChange={ e => setPassword(e.target.value)}
-                />
+        <div className='flex justify-center flex-col'>
+            <div className="flex flex-row gap-[10px] p-[10px] h-[122.42px] mt-[68px] justify-center">
+                <img src="../public/Capa 2.png" className="w-[130.03px] h-[74.49px] mt-[0.84px]" alt="..." />
+                <div className=" text-[63.07px] font-semibold text-[#481373]">Phonemania</div>
             </div>
 
-            <input 
-                type="submit"
-                value="Iniciar Sesión"
-                className="bg-sky-700 mb-5 w-full py-3 text-white uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
-            />
             
-        </form>
+        
+            <form 
+                className="my-10 rounded-lg md:p-10 p-4 items-center flex flex-col"
+                onSubmit={handleSubmit}
+            >   <div className='text-[64px] font-bold flex-col flex h-[77px] w-[235px]'>Ingresa</div>
+                <div className="my-5 justify-center flex flex-col">
+                    <label 
+                        className="uppercase text-xl font-bold justify-center flex flex-col"
+                        htmlFor="username"
+                    >UserName</label>
+                    <input
+                        id="username"
+                        type="username"
+                        placeholder="UserName de Registro"
+                        className="w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
+                        value={username}
+                        onChange={ e => setUsername(e.target.value)}
+                    />
+                </div>
+                <div className="my-5 justify-center flex flex-col">
+                    <label 
+                        className="uppercase text-xl font-bold justify-center flex flex-col"
+                        htmlFor="password"
+                    >Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Password de Registro"
+                        className="w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
+                        value={password}
+                        onChange={ e => setPassword(e.target.value)}
+                    />
+                </div>
 
-        <nav className="lg:flex lg:justify-between">
-            <Link 
-                className='block text-center my-5 text-slate-500 uppercase text-sm'
-                to="/registrar"
-            >¿No tienes una cuenta? Regístrate</Link>
-
-            <Link 
-                className='block text-center my-5 text-slate-500 uppercase text-sm'
-                to="/olvide-password"
-            >Olvide Mi Password</Link>
-        </nav>
-    
+                <input 
+                    type="submit"
+                    value="Entrar"
+                    className="bg-[#8F00FF] rounded-[28px] text-white font-normal text-[20px] py-3 hover:cursor-pointer justify-center flex mt-[18px] w-[300px] p-[10px]"
+                />            
+            </form>
+        </div>
     </>
   )
 }
