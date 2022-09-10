@@ -6,6 +6,7 @@ import AuthLayoutAdmin from './layouts/AuthLayoutAdmin'
 import Main from './paginas/Main'
 // Login Secreto Admin
 import Login from './paginas/Login'
+import MainAdmin from './paginasAdmin/MainAdmin'
 
 import {AuthProvider} from './context/AuthProvider'
 import {ReferenciaProvider} from './context/ReferenciaProvider'
