@@ -20,9 +20,24 @@ const FormularioReferenciaAdminMobile = () => {
         setVideo('')
     }
 
+    const refresh = () => {
+        try {                     
+            location.reload();
+        } catch (error) {
+            
+        }
+        
+    }
+
 
     return (
-            <form 
+        <>
+                <button 
+                    onClick={refresh}
+                    className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
+                    justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
+                </button> 
+        <form 
                 className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
             >   
@@ -56,6 +71,8 @@ const FormularioReferenciaAdminMobile = () => {
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                     />
             </form>
+        </>
+            
     )
 }
 

@@ -46,7 +46,7 @@ const FormularioReferenciaAdminEditarMobile = () => {
 
     return (
     <>
-    <button 
+                <button 
                     onClick={refresh}
                     className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
                     justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar

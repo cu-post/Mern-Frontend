@@ -27,9 +27,9 @@ const Login = () => {
 
   return (
     <>
-        <div className='flex justify-center flex-col'>
-            <div className="flex flex-row gap-[10px] p-[10px] h-[122.42px] mt-[68px] justify-center">
-                <img src="../public/Capa 2.png" className="w-[130.03px] h-[74.49px] mt-[0.84px]" alt="..." />
+        <div className='flex justify-center flex-col items-center'>
+            <div className="items-center md:flex md:flex-row gap-[10px] p-[10px] h-[122.42px] mt-[68px] justify-center">
+                <img src="../public/Capa 2.png" className="w-[130.03px] h-[74.49px] mt-[0.84px] flex justify-center items-center" alt="..." />
                 <div className=" text-[63.07px] font-semibold text-[#481373]">Phonemania</div>
             </div>
 
@@ -48,7 +48,7 @@ const Login = () => {
                         id="username"
                         type="username"
                         placeholder="UserName de Registro"
-                        className="w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
+                        className="sm:w-[450px] md:w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
                         value={username}
                         onChange={ e => setUsername(e.target.value)}
                     />
@@ -62,7 +62,7 @@ const Login = () => {
                         id="password"
                         type="password"
                         placeholder="Password de Registro"
-                        className="w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
+                        className="sm:w-[450px] md:w-[794px] mt-3 p-3 border rounded-[6px] bg-[#FF5E59] text-white placeholder-white"
                         value={password}
                         onChange={ e => setPassword(e.target.value)}
                     />
