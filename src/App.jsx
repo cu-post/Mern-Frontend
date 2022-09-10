@@ -7,8 +7,6 @@ import Main from './paginas/Main'
 // Login Secreto Admin
 import Login from './paginas/Login'
 
-import Proyectos from './paginas/Proyectos'
-
 import {AuthProvider} from './context/AuthProvider'
 import {ReferenciaProvider} from './context/ReferenciaProvider'
 
@@ -30,7 +28,7 @@ function App() {
                 </Route>
 
                 <Route path="/proyectos" element={<RutaProtegida />}>
-                    <Route index element={<Proyectos />} />
+                    <Route index element={<Main />} />
                 </Route>
             </Routes>
         </ReferenciaProvider>
