@@ -27,7 +27,7 @@ const HeaderAdmin = () => {
       <div className="flex flex-col justify-center items-center md:justify-between md:flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
           <button
           onClick={handleCerrarSesion}
-          className='p-3 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59] '
+          className='p-3 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59]'
           >
               <img src="../exit_to_app.png" alt="" />
           </button>

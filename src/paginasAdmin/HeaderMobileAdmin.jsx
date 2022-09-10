@@ -25,11 +25,11 @@ const HeaderMobileAdmin = () => {
 
   return (
     <>
-      <div className="flex flex-row gap-[5px] w-1/4 h-[59.34px]  mt-[2.84px]">
+      <div className="flex justify-center items-centerlex flex-row gap-[5px] lg:w-1/4 h-[59.34px] mt-[2.84px]">
           <img src="/Capa 2.png" className="w-[89.81px] h-[51.32px] mt-[0.84px]" alt="..." />
           <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
-      <div className="flex flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
+      <div className="flex flex-col justify-center items-center md:justify-between md:flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
           <button
           onClick={handleCerrarSesion}
           className='p-3 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59] '
