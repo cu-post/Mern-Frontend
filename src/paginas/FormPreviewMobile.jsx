@@ -5,15 +5,17 @@ import { useEffect } from 'react'
 const FormPreviewMobile = () => {
 
     const params = useParams();
-    const { LoadMobile, mobile, ref1} = useReferencia()
+    const { LoadMobile, mobile, ref} = useReferencia();
 
-    console.log(ref1)
-    
+
+    const reference = ref.filter(function(el){
+        return (el.id == mobile.referenceId)
+      })  
+      
     useEffect( () => {
         LoadMobile(params.id)
-    }, [])
 
-    console.log(mobile)
+    }, [])
 
     return (
     <>
@@ -26,7 +28,7 @@ const FormPreviewMobile = () => {
             </iframe>
             <div className='flex flex-col items-center ml-20'>
                 <div className='text-[40.63px] text-white'>
-                    {ref1.reference}
+                    {reference.map(x => x.reference)}
                 </div>
                 <div className='text-[40.63px] text-white'>
                     Codigo: {mobile.code}
