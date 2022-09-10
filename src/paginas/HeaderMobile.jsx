@@ -27,7 +27,7 @@ const HeaderAdmin = () => {
           <input
           className="bg-[#FF5E59] placeholder-white pt-[16.0377px] pb-[16.0377px] pl-[16.0377px] gap-[16.04px]
           w-[396.13px] h-[59.08px] rounded-[8.01887px] text-white"
-          placeholder="Codigo del telefono"
+          placeholder="Codigo del telefono ?"
           type="text"
           value={busqueda}
           onChange={e => setBusqueda(e.target.value)}
