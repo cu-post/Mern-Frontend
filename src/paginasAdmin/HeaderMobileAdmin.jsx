@@ -25,7 +25,7 @@ const HeaderMobileAdmin = () => {
 
   return (
     <>
-      <div className="flex justify-center items-centerlex flex-row gap-[5px] lg:w-1/4 h-[59.34px] mt-[2.84px]">
+      <div className="flex justify-center items-center flex-row gap-[5px] lg:w-1/4 h-[59.34px] mt-[2.84px]">
           <img src="/Capa 2.png" className="w-[89.81px] h-[51.32px] mt-[0.84px]" alt="..." />
           <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
@@ -46,12 +46,12 @@ const HeaderMobileAdmin = () => {
           onChange={e => setBusqueda(e.target.value)}
           />
           {usuariosFiltrados.length > 0 && (
-            <div className="flex-col">
+            <div className="flex-col absolute mt-16 sm:mt-32 md:mt-0 sm:top-16">
                 {usuariosFiltrados.map( mobiles => (
                     <a
                         key={mobiles.id}
                         value={mobiles}
-                        className="w-1/2"
+                        className="w-1/2 relative"
                         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobileAdmin/${id}/modelo/${mobiles.code}`}
                     >
                       <p className='bg-white rounded-md py-1 px-1 w-fit my-1 gap-1 shadow-lg'>

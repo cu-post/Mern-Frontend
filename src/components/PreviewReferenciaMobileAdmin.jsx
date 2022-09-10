@@ -1,10 +1,11 @@
 import React from 'react'
 import useReferencia from '../hooks/useReferencia'
 import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
+import ModalEditarMobileAdmin from '../paginasAdmin/ModalEditarMobileAdmin'
 
 const PreviewReferencia = ({mobiles2}) => {
 
-  const { handleModalMostrarMobile } = useReferencia()
+  const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
 
   const { referenceid, video, code } = mobiles2
 
@@ -12,8 +13,13 @@ const PreviewReferencia = ({mobiles2}) => {
   <>
     <div className='bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[262.17px] gap-1 p-1 rounded-[24.43px] justify-center flex flex-col m-2'>
       <div className='flex justify-end mr-4 mt-6 mb-[-20px] relative'>
+        <button 
+        onClick={() => handleModalEditarMobileadmin(mobiles2)}
+        className='bg-white w-fit px-4 mt-4 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
+          Editar
+        </button>
       </div>
-      <div className="flex justify-center flex-col h-fit w-fit ml-8 mt-5">
+      <div className="flex justify-center flex-col h-fit w-fit ml-8">
         <div className='flex justify-center items-center flex-col'>
         <iframe className="absolute" width="190" height="335">
         </iframe>
@@ -36,6 +42,7 @@ const PreviewReferencia = ({mobiles2}) => {
       </div>         
     </div>    
     <ModalPreviewMobile/>
+    <ModalEditarMobileAdmin/>
   </>
     
   )

@@ -1,4 +1,4 @@
-import PreviewReferenciaMobile from '../components/PreviewReferenciaMobile';
+import PreviewReferenciaMobile from '../components/PreviewReferenciaMobileAdmin';
 import useReferencia from '../hooks/useReferencia';
 import { useParams } from 'react-router-dom'
 

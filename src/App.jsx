@@ -11,6 +11,7 @@ import FormPreviewMobile from './paginas/FormPreviewMobile'
 // Login Secreto Admin
 import Login from './paginas/Login'
 import MainAdmin from './paginasAdmin/MainAdmin'
+import MainMobileAdmin from './paginasAdmin/MainMobileAdmin'
 import FormPreviewMobileAdmin from './paginasAdmin/FormPreviewMobileAdmin'
 
 import {AuthProvider} from './context/AuthProvider'
@@ -43,7 +44,7 @@ function App() {
                 </Route>
 
               <Route path="/mobileAdmin/:id" element={<AuthLayoutMobileAdmin/>}>
-                <Route index element={<MainMobile />} />                          
+                <Route index element={<MainMobileAdmin />} />                          
                 <Route path="modelo/:id" element={<FormPreviewMobileAdmin />} />
               </Route>
 
