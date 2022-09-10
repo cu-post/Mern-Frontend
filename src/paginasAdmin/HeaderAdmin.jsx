@@ -21,7 +21,7 @@ const HeaderAdmin = () => {
   return (
     <>
       <div className="flex flex-row gap-[5px] w-1/5 h-[59.34px]  mt-[2.84px]">
-          <img src="../public/Capa 2.png" className="w-[89.81px] h-[51.32px] mt-[0.84px]" alt="..." />
+          <img src="./Capa 2.png" className="w-[89.81px] h-[51.32px] mt-[0.84px]" alt="..." />
           <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
       <div className="flex flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
@@ -29,7 +29,7 @@ const HeaderAdmin = () => {
           onClick={handleCerrarSesion}
           className='p-3 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59] '
           >
-              <img src="../public/exit_to_app.png" alt="" />
+              <img src="./exit_to_app.png" alt="" />
           </button>
           <div className='flex flex-col'>
           <input
