@@ -38,7 +38,7 @@ const AuthLayoutMobileAdmin = () => {
                                 <div className='w-[36px] h-[36px] items-center flex'>
                                     <img 
                                     className='items center flex justify-center w-[21px] h-[21px]'
-                                    src="../public/add.png" alt="" />
+                                    src="../add.png" alt="" />
                                 </div>    
                                 <div>
                                     Añadir Mobile
