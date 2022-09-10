@@ -14,7 +14,7 @@ const DispositivosTitleMobile = () => {
 
     return (
       <>
-      <div className='flex flex-col sm:flex-row md:w-3/5 p-4 md:ml-20 justify-center items-center md:justify-between'>
+      <div className='flex flex-col sm:flex-row md:w-3/5 p-4 md:ml-20 xl:w-2/4 justify-center items-center md:justify-between'>
       <span className='font-bold text-3xl '>{reference.map(x => x.reference)}</span>
         <a className='font-bold text-3xl w-2/2 p-4'
         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/perfil`}
