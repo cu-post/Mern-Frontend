@@ -34,7 +34,7 @@ const HeaderAdmin = () => {
             <div className="flex-col">
                 {usuariosFiltrados.map( mobiles => (
                     <a
-                        key={mobiles.id}
+                        key={mobiles.code}
                         value={mobiles}
                         className="w-1/2"
                         href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${id}/modelo/${mobiles.code}`}
