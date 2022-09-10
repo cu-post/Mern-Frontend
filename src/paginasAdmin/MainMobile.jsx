@@ -15,14 +15,14 @@ const Main = () => {
     return (
       <>
         <div className="shadow rounded-lg flex-row w-[1365px] grid grid-cols-5 text-[22.8px] text-white">
-          {mobiles.length ? 
+          {
             mobilefiltrado.map((mobiles, index) => (
               <PreviewReferenciaMobile
                         key={index}
                         mobiles2={mobiles}
                     />
             ))
-            : <p className=" text-center text-gray-600 uppercase  p-5">No hay Mobiles aún</p>}
+          }
         </div>
       </>
   )
