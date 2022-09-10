@@ -39,7 +39,7 @@ const FormularioReferenciaAdminEditar = () => {
             <form 
                 className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
-            >   <button onClick={handleClick}>Eliminar la referencia {id}?</button>
+            >   
 
                     <div className='mb-5'>
                         <label
@@ -98,8 +98,11 @@ const FormularioReferenciaAdminEditar = () => {
                         type="submit"
                         value={reff.id ? 'Actualizar Referencia': 'Crear Referencia'}
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
-                        
                     />
+                    
+                    <button 
+                    className='mt-3 bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
+                    onClick={handleClick}>Eliminar la referencia?</button>
             </form>
     )
 }

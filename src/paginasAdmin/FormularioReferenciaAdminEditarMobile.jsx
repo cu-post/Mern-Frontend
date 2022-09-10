@@ -94,11 +94,9 @@ const FormularioReferenciaAdminEditarMobile = () => {
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                         
                     />
-                    <div>
-                        <button 
-                    className='bg-white w-fit px-4 mt-2 justify-center text-[#8F00FF] font-semibold text-[14.9167px] rounded-[22.38px]'
-                    onClick={handleClick}>Eliminar la referencia {code}?</button>                    
-                    </div>
+                    <button 
+                    className='mt-3 bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
+                    onClick={handleClick}>Eliminar la referencia?</button>
             </form>
     </>
             
