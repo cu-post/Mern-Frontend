@@ -4,7 +4,6 @@ import useReferencia from '../hooks/useReferencia';
 
 const Main = () => {
     const { ref } = useReferencia()
-    console.log(ref)
 
     return (
       <>
