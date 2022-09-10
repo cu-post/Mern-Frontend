@@ -6,6 +6,7 @@ import AuthLayoutAdmin from './layouts/AuthLayoutAdmin'
 //Pagina Principal Usuario
 import Main from './paginas/Main'
 import MainMobile from './paginasAdmin/MainMobile'
+import FormPreviewMobile from './paginas/FormPreviewMobile'
 // Login Secreto Admin
 import Login from './paginas/Login'
 import MainAdmin from './paginasAdmin/MainAdmin'
