@@ -29,7 +29,7 @@ const Login = () => {
     <>
         <div className='flex justify-center flex-col items-center'>
             <div className="items-center md:flex md:flex-row gap-[10px] p-[10px] h-[122.42px] mt-[68px] justify-center">
-                <img src="../public/Capa 2.png" className="w-[130.03px] h-[74.49px] mt-[0.84px] flex justify-center items-center" alt="..." />
+                <img src="/public/Capa 2.png" className="w-[130.03px] h-[74.49px] mt-[0.84px] flex justify-center items-center" alt="..." />
                 <div className=" text-[63.07px] font-semibold text-[#481373]">Phonemania</div>
             </div>
 
