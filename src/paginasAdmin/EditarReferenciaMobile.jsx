@@ -16,7 +16,7 @@ const EditarReferenciaMobile = () => {
 
     return (
       <> 
-        <div className="">
+        <div className="flex flex-col top-0">
           <FormularioReferenciaAdminMobile/>
         </div>
       </>
