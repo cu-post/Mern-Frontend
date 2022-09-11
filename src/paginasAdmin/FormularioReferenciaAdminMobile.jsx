@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import useReferencia from '../hooks/useReferencia'
 import { useParams } from 'react-router-dom'
+import Alerta from '../components/Alerta';
 
 const FormularioReferenciaAdminMobile = () => {
     const params = useParams();
 
-    const { nuevoReferenciaMobile} = useReferencia();   
+    const { nuevoReferenciaMobile, alerta, mostrarAlerta} = useReferencia();   
 
     const referenceId = params.id
     const [video, setVideo] = useState('')
@@ -14,12 +15,23 @@ const FormularioReferenciaAdminMobile = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if([referenceId, video, code].includes('') ) {
+            mostrarAlerta({
+                msg: 'Todos los Campos son Obligatorios',
+                error: true
+            })
+
+            return
+        }
+
         // Pasar los datos hacia el provider
         await nuevoReferenciaMobile({referenceId, video, code})
 
         setVideo('')
         setCode('')
     }
+    
+    const { msg } = alerta
 
     const refresh = () => {
         try {                     
@@ -42,6 +54,7 @@ const FormularioReferenciaAdminMobile = () => {
                 className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
             >   
+            {msg && <Alerta alerta={alerta} />}
 
                     <div className='mb-5'>
                         <label

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import useReferencia from '../hooks/useReferencia'
+import Alerta from '../components/Alerta';
 
 const FormularioReferenciaAdmin = () => {
 
-    const { submitReferencia} = useReferencia();   
+    const { submitReferencia, alerta, mostrarAlerta} = useReferencia();   
 
     const [reference, setReference] = useState('')
     const [img, setImg] = useState('')
@@ -12,6 +13,15 @@ const FormularioReferenciaAdmin = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if([reference, img].includes('') ) {
+            mostrarAlerta({
+                msg: 'Todos los Campos son Obligatorios',
+                error: true
+            })
+
+            return
+        }
+
         // Pasar los datos hacia el provider
         await submitReferencia({reference, img})
 
@@ -19,6 +29,8 @@ const FormularioReferenciaAdmin = () => {
         setImg('')
         setId('')
     }
+    
+    const { msg } = alerta
 
     const refresh = () => {
         try {                     
@@ -39,9 +51,9 @@ const FormularioReferenciaAdmin = () => {
         </button> 
         <form 
                     className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
-                    onSubmit={handleSubmit}
-                >   
-
+                    onSubmit={handleSubmit}             
+            >
+            {msg && <Alerta alerta={alerta} />}
                         <div className='mb-5'>
                             <label
                                 className="text-white uppercase font-bold text-sm"
