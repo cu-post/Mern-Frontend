@@ -37,7 +37,7 @@ const FormPreviewMobile = () => {
             onClick={refresh}
             className='hidden lg:visible h-fit w-fit bg-[#8F00FF] items-center lg:flex rounded-[30px]
             justify-center text-white py-[7px] px-[15px] gap-[10px] lg:fixed lg:top-0'>Cerrar</button> 
-            <div className='flex flex-col items-center sm:ml-20 w-fit h-fit'>
+            <div className='flex flex-col items-center sm:items-end ml-10 sm:ml-20 w-fit h-fit'>
                 <div className='text-[40.63px] text-white'>
                     {mobilefiltrado.map(x => x.reference)}
                 </div>
