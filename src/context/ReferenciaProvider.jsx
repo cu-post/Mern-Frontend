@@ -1,12 +1,13 @@
 import { useState, useEffect, createContext } from 'react'
 import clienteAxios from '../config/clienteAxios'
 
-
 const ReferenciaContext = createContext();
 
 
 const ReferenciaProvider = ({children}) => {
 
+    const [ alerta, setAlerta] = useState({});
+    const [ cargando, setCargando] = useState(false);
     const [ ref, setRef] = useState([]);
     const [ refid, setRefid] = useState([]);
     const [ ref1, setRef1] = useState([]);
@@ -21,6 +22,7 @@ const ReferenciaProvider = ({children}) => {
     const [ modalEditarMobile , setModalEditarMobile] = useState(false);
     const [ modalEditarMobileAdmin , setModalEditarMobileAdmin] = useState(false);
 
+    
     useEffect(() => {
         const LoadReferences = async () => {
             const { data } = await clienteAxios('/reference')
@@ -40,8 +42,22 @@ const ReferenciaProvider = ({children}) => {
         }, [])
 
     const LoadReference = async id => {
+        setCargando(true)
+        try {
         const { data } = await clienteAxios(`/reference/${id}`)
         setRef1(data)
+        setAlerta({})
+        } catch (error) {
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
+            setTimeout(() => {
+                setAlerta({})
+            }, 3000);
+        } finally {
+            setCargando(false)
+        }
     }
 
     useEffect(() => {
@@ -55,9 +71,32 @@ const ReferenciaProvider = ({children}) => {
 
     
     const LoadMobile = async id => {
+        setCargando(true)
+        try {
         const { data } = await clienteAxios(`/mobile/modelo/${id}`)
         setMobile(data)
-    }    
+        setAlerta({})
+        } catch (error) {
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
+            setTimeout(() => {
+                setAlerta({})
+            }, 3000);
+        } finally {
+            setCargando(false)
+        }
+    }
+
+
+    const mostrarAlerta = alerta => {
+        setAlerta(alerta)
+
+        setTimeout(() => {
+            setAlerta({})
+        }, 5000);
+    }
 
     // Mobiles
 
@@ -74,7 +113,17 @@ const ReferenciaProvider = ({children}) => {
         try {
           const { data } = await clienteAxios.patch(`/mobile/${ref1.id}`, ref1)
           setMobiles([data])     
-          window.location.reload();
+          
+          setAlerta({
+            msg: 'Mobile Actualizada Correctamente',
+            error: false
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+            window.location.reload();
+        }, 3000);
+
           } catch (error) {
               console.log(error)
           }
@@ -83,12 +132,21 @@ const ReferenciaProvider = ({children}) => {
     const nuevoReferenciaMobile = async ref1 => {        
         try {
         const { data } = await clienteAxios.post('/mobile', ref1)
-        setMobiles([...mobiles, data])       
-        window.location.reload();
-        } catch (error) {
-            console.log(error)
-        }
+        setMobiles([...mobiles, data])     
+
+        setAlerta({
+            msg: 'Mobile Creado Correctamente',
+            error: false
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+            window.location.reload();
+        }, 3000);
+    } catch (error) {
+        console.log(error)
     }
+}
 
     const eliminarReferenciaMobile = async mobile => {
         console.log(mobile)
@@ -107,7 +165,17 @@ const ReferenciaProvider = ({children}) => {
 
             // Sincronizar el state
             const mobileActualizados = mobiles.filter(mobilesState => mobilesState.code !== mobile.code )
-            setMobiles(mobileActualizados)    
+            setMobiles(mobileActualizados)                
+
+            setAlerta({
+                msg: data.msg,
+                error: false
+            })
+
+            setTimeout(() => {
+                setAlerta({})
+                window.location.reload();
+            }, 3000);
         } catch (error) {
             console.log(error)
         }
@@ -127,7 +195,17 @@ const ReferenciaProvider = ({children}) => {
         try {
           const { data } = await clienteAxios.patch(`/reference/${ref1.id}`, ref1)
           setRef([data])     
-          window.location.reload();
+          
+          setAlerta({
+            msg: 'Referencia Actualizada Correctamente',
+            error: false
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+            window.location.reload();
+        }, 3000);
+
           } catch (error) {
               console.log(error)
           }
@@ -136,12 +214,21 @@ const ReferenciaProvider = ({children}) => {
     const nuevoReferencia = async ref1 => {        
         try {
         const { data } = await clienteAxios.post('/reference', ref1)
-        setRef([...ref, data])       
-        window.location.reload();
-        } catch (error) {
-            console.log(error)
-        }
+        setRef([...ref, data])      
+
+        setAlerta({
+            msg: 'Referencia Creada Correctamente',
+            error: false
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+            window.location.reload();
+        }, 3000);
+    } catch (error) {
+        console.log(error)
     }
+}
 
     const eliminarReferencia = async ref1 => {
         try {
@@ -159,8 +246,17 @@ const ReferenciaProvider = ({children}) => {
 
             // Sincronizar el state
             const ref1Actualizados = ref.filter(refState => refState.id !== ref1.id )
-            setRef(ref1Actualizados)            
-            window.location.reload();
+            setRef(ref1Actualizados)                 
+
+            setAlerta({
+                msg: data.msg,
+                error: false
+            })
+
+            setTimeout(() => {
+                setAlerta({})
+                window.location.reload();
+            }, 3000);
         } catch (error) {
             console.log(error)
         }
@@ -241,7 +337,10 @@ const ReferenciaProvider = ({children}) => {
                 nuevoReferenciaMobile,
                 eliminarReferenciaMobile,
                 handleModalEditarMobileadmin,
-                HandleEditarMobileAdmin
+                HandleEditarMobileAdmin,
+                mostrarAlerta,
+                alerta,
+
 
 
 

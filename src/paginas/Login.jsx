@@ -11,7 +11,7 @@ const Login = () => {
 
     const { setAuth } = useAuth();
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -26,6 +26,7 @@ const Login = () => {
 
         try {
             const { data } = await clienteAxios.post('/user/login', { username, password})
+            setAlerta({})
             localStorage.setItem('token', data.token)
             setAuth(data)
             navigate('/perfil')
@@ -37,7 +38,6 @@ const Login = () => {
         }
 
     }
-
     
     const { msg } = alerta
 
@@ -49,10 +49,7 @@ const Login = () => {
                 <div className="justify-center flex text-[50px] sm:text-[63.07px] font-semibold text-[#481373]">Phonemania</div>
             </div>
 
-            
-            {msg && <Alerta alerta={alerta } />}
-
-            
+            {msg && <Alerta alerta={alerta } />}            
         
             <form 
                 className="my-10 rounded-lg md:p-10 p-4 items-center flex flex-col"
