@@ -39,7 +39,7 @@ const FormularioReferenciaAdminMobile = () => {
                     justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
                 </button> 
         <form 
-                className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
+                className="bg-[#FF5E59] w-[300px] h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
             >   
 
