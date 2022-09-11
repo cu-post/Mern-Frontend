@@ -47,7 +47,7 @@ const ReferenciaProvider = ({children}) => {
 
     useEffect(() => {
         const LoadMobiles = async () => {
-            const { data } = await clienteAxios(`/mobile/`)
+            const { data } = await clienteAxios(`/mobile`)
             setMobiles(data)
             }
       

@@ -19,9 +19,7 @@ const HeaderMobileAdmin = () => {
     } 
   }
 
-  const usuariosFiltrados = busqueda === '' ? [] : mobiles.filter(function(el){
-    return (el.referenceId == id)
-  })
+  const usuariosFiltrados1 = busqueda === '' ? [] : mobiles.filter(ref => ref.code == busqueda)
 
   return (
     <>
@@ -45,9 +43,9 @@ const HeaderMobileAdmin = () => {
           value={busqueda}
           onChange={e => setBusqueda(e.target.value)}
           />
-          {usuariosFiltrados.length > 0 && (
+          {usuariosFiltrados1.length > 0 && (
             <div className="flex-col absolute mt-16 sm:mt-32 md:mt-0 sm:top-16">
-                {usuariosFiltrados.map( mobiles => (
+                {usuariosFiltrados1.map( mobiles => (
                     <a
                         key={mobiles.id}
                         value={mobiles}

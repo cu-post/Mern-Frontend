@@ -9,14 +9,12 @@ const HeaderAdmin = () => {
   const params = useParams();
   const id = params.id
 
-  const usuariosFiltrados = busqueda === '' ? [] : mobiles.filter(function(el){
-    return (el.referenceId == id)
-  })
+  const usuariosFiltrados1 = busqueda === '' ? [] : mobiles.filter(ref => busqueda == ref.code)
 
   return (
     <>
       <div className="flex justify-center items-center flex-row gap-[5px] lg:ml-44 xl:ml-0 lg:w-1/4 h-[59.34px] mt-[2.84px]">
-        <img src="../Capa 2.png" className="w-[59.81px] h-[38.32px] sm:w-[89.81px] sm:h-[51.32px] mt-[0.84px]" alt="..." />
+        <img src="/Capa 2.png" className="w-[59.81px] h-[38.32px] sm:w-[89.81px] sm:h-[51.32px] mt-[0.84px]" alt="..." />
         <div className=" text-[43.58px] font-semibold text-[#481373]">Phonemania</div>
       </div>
       <div className="flex flex-col justify-center items-center md:justify-between md:flex-row gap-[5px] w-0/2 h-fit mt-[2.84px]">
@@ -29,9 +27,9 @@ const HeaderAdmin = () => {
           value={busqueda}
           onChange={e => setBusqueda(e.target.value)}
           />
-          {usuariosFiltrados.length > 0 && (
+          {usuariosFiltrados1 .length > 0 && (
             <div className="flex-col absolute mt-14 md:mt-0 sm:top-16">
-                {usuariosFiltrados.map( mobiles => (
+                {usuariosFiltrados1.map( mobiles => (
                     <a
                         key={mobiles.id}
                         value={mobiles}
