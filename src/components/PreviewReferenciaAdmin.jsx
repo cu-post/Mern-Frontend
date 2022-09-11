@@ -10,7 +10,7 @@ const PreviewReferenciaAdmin = ({reff}) => {
 
   return (
   <>
-    <div className=' bg-[#373737] hover:bg-[#FF5E59] h-fit md:h-[394.07px] w-fit md:w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1'>
+    <div className=' bg-[#373737] hover:bg-[#FF5E59] md:h-[394.07px] md:w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1'>
       <div className='flex justify-end mr-4 mt-2'>
         <button 
         onClick={() => handleModalEditarMobile(reff)}
