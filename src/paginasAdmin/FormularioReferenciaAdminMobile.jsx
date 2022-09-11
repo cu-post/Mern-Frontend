@@ -54,7 +54,7 @@ const FormularioReferenciaAdminMobile = () => {
                         <label
                             className="text-white uppercase font-bold text-sm"
                             htmlFor="vid"
-                        >Url Video [No puede ser Igual a otro subido previamente]</label>
+                        >Url Video [debe ser unico]</label>
 
                         <input
                             id="vid"

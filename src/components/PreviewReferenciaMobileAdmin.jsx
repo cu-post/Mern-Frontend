@@ -15,7 +15,7 @@ const PreviewReferencia = ({mobiles2}) => {
       <div className='flex justify-end mt-6 mr-1 mb-[-20px] relative'>
         <button 
         onClick={() => handleModalEditarMobileadmin(mobiles2)}
-        className='bg-white w-fit p-1 px-4 mt-4 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
+        className='bg-white w-fit p-1 px-4 mt-4 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px] items-center justify-center flex'>
           Editar
         </button>
       </div>
