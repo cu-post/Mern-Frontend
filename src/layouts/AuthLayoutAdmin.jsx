@@ -32,8 +32,8 @@ const AuthLayoutAdmin = () => {
                     </div>                    
                 </div>
             ) : <Navigate to="/" />}
-            <button className='bottom-0 right-0 fixed w-[334px] h-[81px] mb-[58px] mr-[41px] bg-white justify-center flex flex-row align-middle shadow-black shadow-lg rounded-[30px] items-center
-                                text-[26.2723px] text-[#8F00FF] font-bold'
+            <button className='bottom-0 right-0 fixed md:w-[334px] md:h-[81px] mb-[58px] mr-[41px] bg-white justify-center flex flex-row align-middle shadow-black shadow-lg rounded-[30px] items-center
+                                text-[26.2723px] text-[#8F00FF] font-bold md:p-0'
                                 onClick={HandleAñadirReferencia}>
                                 <div className='w-[36px] h-[36px] items-center flex'>
                                     <img 
