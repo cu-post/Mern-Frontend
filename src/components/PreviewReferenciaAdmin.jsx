@@ -6,7 +6,7 @@ const PreviewReferenciaAdmin = ({reff}) => {
 
   const { handleModalEditarMobile } = useReferencia()
 
-  const { reference, img, id, allow } = reff
+  const { reference, img, id, agotado } = reff
 
   return (
   <>
@@ -32,8 +32,8 @@ const PreviewReferenciaAdmin = ({reff}) => {
               Ref: {id}
             </div>
             <div
-              className={`${allow ? 'bg-white' : 'bg-white text-black'} gap-[10.65px] p-[10.65px] mt-[10px] w-fit px-4 py-3 text-[#8F00FF] uppercase font-bold text-[14.9167px] rounded-[22.38px]`}
-              >{allow ? 'Disponible' : 'Agotado'}</div>
+              className={`${!agotado ? 'bg-white' : 'bg-white text-black'} gap-[10.65px] p-[10.65px] mt-[10px] w-fit px-4 py-3 text-[#8F00FF] uppercase font-bold text-[14.9167px] rounded-[22.38px]`}
+              >{!agotado ? 'Disponible' : 'Agotado'}</div>
           </div>
         </div>          
       </a>

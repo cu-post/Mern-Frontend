@@ -3,7 +3,7 @@ import useReferencia from '../hooks/useReferencia'
 
 const FormularioReferenciaAdmin = () => {
 
-    const { submitReferencia, handleAllow, allow} = useReferencia();   
+    const { submitReferencia} = useReferencia();   
 
     const [reference, setReference] = useState('')
     const [img, setImg] = useState('')
@@ -13,7 +13,7 @@ const FormularioReferenciaAdmin = () => {
         e.preventDefault();
 
         // Pasar los datos hacia el provider
-        await submitReferencia({reference, img, allow})
+        await submitReferencia({reference, img})
 
         setReference('')
         setImg('')
@@ -78,20 +78,6 @@ const FormularioReferenciaAdmin = () => {
                                 type="file"
                                 className="border w-[400.02px] h-[281.73px] bg-white mt-2 placeholder-gray-400 rounded-md"
                             />                       
-                        </div>
-
-                        <div className='mb-5 flex flex-col'>
-                            <label
-                                className="text-white uppercase font-bold text-sm"
-                                htmlFor="allow"
-                            >Allow</label>
-
-                            <button 
-                            className={`${allow ? 'bg-white' : 'bg-white text-black'} items-center justify-center mt-3 w-fit px-4 py-3 text-[#8F00FF] uppercase font-bold text-[14.9167px] rounded-[22.38px]`}
-                            onClick={handleAllow}>
-                                {allow? 'Disponible' : 'Agotado'}
-                            </button>
-                                        
                         </div>
 
                         <input

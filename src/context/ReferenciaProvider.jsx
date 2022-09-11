@@ -20,7 +20,6 @@ const ReferenciaProvider = ({children}) => {
     const [ modalPreviewMobile , setModalPreviewMobile] = useState(false);
     const [ modalEditarMobile , setModalEditarMobile] = useState(false);
     const [ modalEditarMobileAdmin , setModalEditarMobileAdmin] = useState(false);
-    const [ allow , setAllow] = useState(false);
 
     useEffect(() => {
         const LoadReferences = async () => {
@@ -206,9 +205,6 @@ const ReferenciaProvider = ({children}) => {
         setModalEditarMobileAdmin(true)
     }
 
-    const handleAllow = () => {        
-        setAllow(!allow)
-    }
 
     return (
         <ReferenciaContext.Provider
@@ -239,8 +235,6 @@ const ReferenciaProvider = ({children}) => {
                 HandleEditarMobile,
                 modalEditarMobile,
                 modalEditarMobileAdmin,
-                handleAllow,
-                allow,
                 eliminarReferencia,
                 submitReferenciaMobile,
                 editarReferenciaMobile,
