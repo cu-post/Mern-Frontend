@@ -6,7 +6,7 @@ const PreviewReferencia = ({reff}) => {
 
   return (
     <a href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${id}`}
-    className=' bg-[#373737] hover:bg-[#FF5E59] h-fit md:h-[394.07px] md:w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1'>
+    className=' bg-[#373737] hover:bg-[#FF5E59] h-[394.07px] w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1'>
       <div className='flex items-center flex-col'>
         <img 
         className='h-[221.46px] w-fit p-4 rounded-[24.43px]'
