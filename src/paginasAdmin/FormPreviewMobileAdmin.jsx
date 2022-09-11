@@ -2,7 +2,7 @@ import useReferencia from '../hooks/useReferencia';
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
-const FormPreviewMobile = () => {
+const FormPreviewMobileAdmin = () => {
 
     const params = useParams();   
     const { ref, LoadMobile, mobile, mobiles } = useReferencia();
