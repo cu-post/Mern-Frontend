@@ -115,7 +115,7 @@ const ReferenciaProvider = ({children}) => {
           setMobiles([data])     
           
           setAlerta({
-            msg: 'Mobile Actualizada Correctamente',
+            msg: 'Mobile Actualizado Correctamente',
             error: false
         })
 

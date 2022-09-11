@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import useReferencia from '../hooks/useReferencia'
+import Alerta from '../components/Alerta';
 
 const FormularioReferenciaAdminEditarMobile = () => {
     
-    const { submitReferenciaMobile, mobiles2, eliminarReferenciaMobile, ref} = useReferencia();   
+    const { submitReferenciaMobile, mobiles2, eliminarReferenciaMobile, ref, mostrarAlerta, alerta} = useReferencia();   
 
     const reference = ref.filter(function(el){
         return (el.id == mobiles2.id)
@@ -26,6 +27,15 @@ const FormularioReferenciaAdminEditarMobile = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if([id, referenceId, video, code].includes('') ) {
+            mostrarAlerta({
+                msg: 'Todos los Campos son Obligatorios',
+                error: true
+            })
+
+            return
+        }
+
         // Pasar los datos hacia el provider
         await submitReferenciaMobile({id, referenceId, video, code})
 
@@ -34,6 +44,8 @@ const FormularioReferenciaAdminEditarMobile = () => {
         setCode('')
         
     }
+
+    const { msg } = alerta
 
     const handleClick = () => {
         if(confirm('¿Deseas eliminar este Mobile?')) {
@@ -62,6 +74,7 @@ const FormularioReferenciaAdminEditarMobile = () => {
                 className="bg-[#FF5E59] items-center flex flex-col w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
             >   
+            {msg && <Alerta alerta={alerta} />}
 
                     <div className='mb-5'>
                         <label

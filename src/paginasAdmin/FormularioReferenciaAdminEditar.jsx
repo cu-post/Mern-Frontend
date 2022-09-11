@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import useReferencia from '../hooks/useReferencia'
+import Alerta from '../components/Alerta';
 
 const FormularioReferenciaAdminEditar = () => {
     
-    const { submitReferencia, reff, eliminarReferencia} = useReferencia();   
+    const { submitReferencia, reff, eliminarReferencia, mostrarAlerta, alerta} = useReferencia();   
 
     const [reference, setReference] = useState('')
     const [img, setImg] = useState('')
@@ -20,13 +21,24 @@ const FormularioReferenciaAdminEditar = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if([reference, img, id].includes('') ) {
+            mostrarAlerta({
+                msg: 'Todos los Campos son Obligatorios',
+                error: true
+            })
+
+            return
+        }
+
         // Pasar los datos hacia el provider
         await submitReferencia({reference, img, id})
 
         setReference('')
         setImg('')
         
-    }
+    }    
+
+    const { msg } = alerta
 
     const handleClick = () => {
         if(confirm('¿Deseas eliminar este proyecto?')) {
@@ -40,7 +52,7 @@ const FormularioReferenciaAdminEditar = () => {
                 className="bg-[#FF5E59] w-fit h-fit shadow pt-[37px] pr-[44px] pb-[37px] pl-[44px] rounded-[23.35px]"
                 onSubmit={handleSubmit}
             >   
-
+                {msg && <Alerta alerta={alerta} />}
                     <div className='mb-5'>
                         <label
                             className="text-white uppercase font-bold text-sm"
