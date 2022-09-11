@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import clienteAxios from '../config/clienteAxios'
 import useAuth from '../hooks/useAuth'
+import Alerta from '../components/Alerta'
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [alerta, setAlerta] = useState({})
 
     const { setAuth } = useAuth();
 
@@ -14,16 +16,30 @@ const Login = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if([username, password].includes('')) {
+            setAlerta({
+                msg: 'Todos los campos son obligatorios',
+                error: true
+            });
+            return
+        }
+
         try {
             const { data } = await clienteAxios.post('/user/login', { username, password})
             localStorage.setItem('token', data.token)
             setAuth(data)
             navigate('/perfil')
         } catch (error) {
-            console.log(error)
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
         }
 
     }
+
+    
+    const { msg } = alerta
 
   return (
     <>
@@ -32,6 +48,9 @@ const Login = () => {
                 <img src="../Capa 2.png" className="sm:w-[130.03px] sm:h-[74.49px] mt-[0.84px] flex justify-center items-center" alt="..." />
                 <div className="justify-center flex text-[50px] sm:text-[63.07px] font-semibold text-[#481373]">Phonemania</div>
             </div>
+
+            
+            {msg && <Alerta alerta={alerta } />}
 
             
         
