@@ -62,7 +62,7 @@ const ReferenciaProvider = ({children}) => {
         }
     }
 
-    const editarReferenciaMobile = async ref1 => {    
+    const editarReferenciaMobile = async ref1 => {   
         try {
           const { data } = await clienteAxios.patch(`/mobile/${ref1.id}`, ref1)
           setMobiles([data])     

@@ -3,28 +3,35 @@ import useReferencia from '../hooks/useReferencia'
 
 const FormularioReferenciaAdminEditarMobile = () => {
     
-    const { submitReferenciaMobile, mobiles2, eliminarReferenciaMobile} = useReferencia();   
+    const { submitReferenciaMobile, mobiles2, eliminarReferenciaMobile, ref} = useReferencia();   
+
+    const reference = ref.filter(function(el){
+        return (el.id == mobiles2.id)
+      })  
 
     const [referenceId, setReferenceId] = useState('')
     const [video, setVideo] = useState('')
-    const code = mobiles2.code
+    const [code, setCode] = useState('')
+    const id = mobiles2.id
 
     useEffect(() => {
-        if( code ) {
+        if( id ) {
             setReferenceId(mobiles2.referenceId)
             setVideo(mobiles2.video)
+            setCode(mobiles2.code)
         } 
-    }, [code])
+    }, [id])
 
 
     const handleSubmit = async e => {
         e.preventDefault();
 
         // Pasar los datos hacia el provider
-        await submitReferenciaMobile({referenceId, video, code})
+        await submitReferenciaMobile({id, referenceId, video, code})
 
         setReferenceId('')
         setVideo('')
+        setCode('')
         
     }
 
@@ -60,15 +67,21 @@ const FormularioReferenciaAdminEditarMobile = () => {
                         <label
                             className="text-white uppercase font-bold text-sm"
                             htmlFor="referenceId"
-                        >Nombre de Referencia</label>
+                        >Referencia {reference.map(x => x.reference)}</label>
+                    </div>
+                    <div className='mb-5'>
+                        <label
+                            className="text-white uppercase font-bold text-sm"
+                            htmlFor="code"
+                        >Codigo</label>
 
                         <input
-                            id="referenceId"
-                            type="text"
+                            id="code"
+                            type="number"
                             className="border w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                            placeholder={mobiles2.referenceId}
-                            value={referenceId}
-                            onChange={e => setReferenceId(e.target.value)}
+                            placeholder={mobiles2.code}
+                            value={code}
+                            onChange={e => setCode(e.target.value)}
                         />
                     </div>
 
@@ -90,7 +103,7 @@ const FormularioReferenciaAdminEditarMobile = () => {
 
                     <input
                         type="submit"
-                        value={mobiles2.code ? 'Actualizar Referencia': 'Crear Referencia'}
+                        value={mobiles2.id ? 'Actualizar Referencia': 'Crear Referencia'}
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                         
                     />

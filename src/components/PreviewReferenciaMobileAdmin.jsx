@@ -7,7 +7,7 @@ const PreviewReferencia = ({mobiles2}) => {
 
   const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
 
-  const { referenceid, video, code } = mobiles2
+  const { referenceid, video, code} = mobiles2
 
   return (
   <>
@@ -29,13 +29,13 @@ const PreviewReferencia = ({mobiles2}) => {
         title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         >
         </iframe>
-        </div>      
+        </div>     
         <button onClick={() => handleModalMostrarMobile(mobiles2)} className='flex-col items-center flex'>
           <div className='w-fit pl-4 pr-4 pb-4'>
             {referenceid}
             <div 
             className='bg-white w-fit px-4 py-1 mb-6 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
-                {''}Ver
+                {''}Ver Codigo {code}
             </div>
           </div>
         </button>   
