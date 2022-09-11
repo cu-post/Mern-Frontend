@@ -16,7 +16,7 @@ const EditarReferenciaMobile = () => {
 
     return (
       <> 
-        <div className="p-10">
+        <div className="">
           <FormularioReferenciaAdminMobile/>
         </div>
       </>
