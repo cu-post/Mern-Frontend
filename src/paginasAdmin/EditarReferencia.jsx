@@ -16,7 +16,7 @@ const EditarReferencia = () => {
 
     return (
       <> 
-        <div className="p-10">
+        <div className="">
           <FormularioReferenciaAdmin/>
         </div>
       </>
