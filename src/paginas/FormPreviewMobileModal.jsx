@@ -5,7 +5,11 @@ import { useEffect } from 'react'
 const FormPreviewMobile = () => {
 
     const params = useParams();    
-    const { LoadReference, mobiles2, ref1 } = useReferencia()
+    const { LoadReference, mobiles2, ref } = useReferencia()
+
+    const mobilefiltrado = ref.filter(function(el){
+        return (el.id == params.id)
+      })
     
     useEffect( () => {
         LoadReference(params.id)
@@ -33,11 +37,11 @@ const FormPreviewMobile = () => {
             onClick={refresh}
             className='hidden lg:visible h-fit w-fit bg-[#8F00FF] items-center lg:flex rounded-[30px]
             justify-center text-white py-[7px] px-[15px] gap-[10px] lg:fixed lg:top-0'>Cerrar</button> 
-            <div className='flex flex-col items-end ml-20 w-fit h-fit'>
+            <div className='flex flex-col items-center sm:ml-20 w-fit h-fit'>
                 <div className='text-[40.63px] text-white'>
-                    {ref1.reference}
+                    {mobilefiltrado.map(x => x.reference)}
                 </div>
-                <div className='text-[40.63px] text-white'>
+                <div className='flex text-[40.63px] text-white'>
                     Codigo: {mobiles2.code}
                 </div>
             </div>

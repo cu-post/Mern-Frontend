@@ -30,7 +30,7 @@ const FormPreviewMobileAdmin = () => {
                 <div className='flex justify-center text-[40.63px] text-white'>
                     {ref.map(x => x.reference)}
                 </div>
-                <div className='flex justify-center items-center flex-row text-[40.63px] text-white'>
+                <div className='flex justify-center text-[40.63px] text-white'>
                     Codigo: {mobiles.map(x => x.code)}
                 </div>
             </div>
