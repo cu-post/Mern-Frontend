@@ -8,6 +8,7 @@ const ReferenciaContext = createContext();
 const ReferenciaProvider = ({children}) => {
 
     const [ ref, setRef] = useState([]);
+    const [ refid, setRefid] = useState([]);
     const [ ref1, setRef1] = useState([]);
     const [ mobiles, setMobiles] = useState([]);
     const [ mobile, setMobile] = useState([]);
@@ -30,7 +31,15 @@ const ReferenciaProvider = ({children}) => {
         LoadReferences()
         }, [])
 
-    
+    useEffect(() => {
+        const LoadReferencesid = async () => {
+            const { data } = await clienteAxios('/reference/id')
+            setRefid(data)
+            }
+        
+        LoadReferencesid()
+        }, [])
+
     const LoadReference = async id => {
         const { data } = await clienteAxios(`/reference/${id}`)
         setRef1(data)
@@ -206,6 +215,7 @@ const ReferenciaProvider = ({children}) => {
         <ReferenciaContext.Provider
             value={{
                 ref,
+                refid,
                 ref1,
                 LoadReference,
                 mobiles,
