@@ -21,7 +21,7 @@ const FormPreviewMobile = () => {
         <div className='justify-center w-fit lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] flex flex-col lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] items-center'>
             <iframe width="432.89" height="660.25"
             src={mobiles.map(x => x.video)}
-            className='my-[11.29px] rounded-[19.27px] gap-[15.41px] w-[310px] h-[460px] md:w-[432.89px] md:h-[660.25px]'
+            className='my-[11.29px] rounded-[19.27px] gap-[15.41px] w-[310px] h-[400px] md:w-[432.89px] md:h-[660.25px]'
             title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen>
             </iframe>
