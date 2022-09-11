@@ -108,8 +108,7 @@ const ReferenciaProvider = ({children}) => {
 
             // Sincronizar el state
             const mobileActualizados = mobiles.filter(mobilesState => mobilesState.code !== mobile.code )
-            setMobiles(mobileActualizados)            
-            window.location.reload();
+            setMobiles(mobileActualizados)    
         } catch (error) {
             console.log(error)
         }

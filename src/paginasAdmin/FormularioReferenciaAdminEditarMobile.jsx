@@ -36,8 +36,8 @@ const FormularioReferenciaAdminEditarMobile = () => {
     }
 
     const handleClick = () => {
-        if(confirm('¿Deseas eliminar este proyecto?')) {
-            eliminarReferenciaMobile({code})
+        if(confirm('¿Deseas eliminar este Mobile?')) {
+            eliminarReferenciaMobile({id})
         } 
     }
 
