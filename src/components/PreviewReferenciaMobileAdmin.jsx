@@ -25,7 +25,7 @@ const PreviewReferencia = ({mobiles2}) => {
           <iframe className="absolute" width="190" height="335">
           </iframe>
           <iframe width="180" height="315"
-          src={video}
+          src={`https://www.youtube.com/embed/${video}`}
           className='mt-6 mb-3 rounded-[24.43px]'
           title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           >
