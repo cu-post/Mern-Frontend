@@ -1,12 +1,54 @@
 import React from 'react'
 import useReferencia from '../hooks/useReferencia'
 import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 const PreviewReferenciaMobile = ({mobiles2}) => {
 
+  
+  const params = useParams()
+
   const { handleModalMostrarMobile } = useReferencia()
 
-  const { referenceid, video, code } = mobiles2
+  console.log(mobiles2)
+
+  // Iframe Body Onclick
+  const [id, setId] = useState('')
+  const [code, setCode] = useState('')
+  const [date, setDate] = useState('')
+  const [referenceid, setReferenceid] = useState('')
+  const [video, setVideo] = useState('')
+
+  useEffect(() => {
+      if(params.id ) {
+          setId(mobiles2.id)
+          setCode(mobiles2.code)
+          setDate(mobiles2.date)
+          setReferenceid(mobiles2.Referenceid)
+          setVideo(mobiles2.video)
+          return
+      } 
+      setId('')
+      setCode('')
+      setDate('')
+      setReferenceid('')
+      setVideo('')
+      
+  }, [params.id]);
+
+    // Iframe Body Onclick
+useEffect(() => {
+  const iframeclick = async () => {
+    const bodyt = await document.getElementById(code).contentWindow.document.body
+    console.log(bodyt)
+    const body = {id, code, referenceid, video}
+    bodyt.onclick = () => handleModalEditarMobileadmin(body)
+    }
+  iframeclick()
+}, [params.id])  
+
+  console.log(id, code, referenceid, video)
 
   return (
   <>
