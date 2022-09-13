@@ -57,7 +57,8 @@ useEffect(() => {
       </div>
       <div className="flex justify-center flex-col h-fit w-fit  mt-5">
         <div className='flex justify-center items-center flex-col'>
-        <iframe className="absolute" width="190" height="335">
+        <iframe id={code} onLoad={() => iframeclick()}
+        className="absolute" width="190" height="335">
         </iframe>
         <iframe width="180" height="315"
         src={`https://www.youtube.com/embed/${video}`}
