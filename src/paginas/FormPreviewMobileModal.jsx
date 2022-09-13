@@ -64,7 +64,7 @@ const FormPreviewMobile = () => {
     <>
         <div className='lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] lg:flex lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] lg:items-center'>
             <iframe width="432.89" height="660.25"
-            src={`https://www.youtube-nocookie.com/embed/${video}?autoplay=1&origin=${import.meta.env.VITE_BACKEND_URL}}
+            src={`https://www.youtube-nocookie.com/embed/${video}?autoplay=1&origin=${import.meta.env.VITE_BACKEND_URL}`}
             className='my-[11.29px] h-[400px] sm:w-[432px] sm:h-[660.25px] w-[300px] rounded-[19.27px] gap-[15.41px]'
             title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen>
