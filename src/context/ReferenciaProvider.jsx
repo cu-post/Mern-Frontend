@@ -14,6 +14,7 @@ const ReferenciaProvider = ({children}) => {
     const [ mobiles, setMobiles] = useState([]);
     const [ mobile, setMobile] = useState([]);
     const [ mobiles2, setMobiles2] = useState({});
+    const [ mobiles3, setMobiles3] = useState({});
     const [ reff, setReff] = useState({});
     const [ buscador, setBuscador] = useState(false);
     const [ modalAñadirReferencia , setModalAñadirReferencia] = useState(false);
@@ -276,6 +277,7 @@ const ReferenciaProvider = ({children}) => {
 
     const HandlePreviewMobile = () => {
         setModalPreviewMobile(!modalPreviewMobile)
+        setMobiles2({})
     }
 
     const HandleEditarMobile = () => {
@@ -283,7 +285,8 @@ const ReferenciaProvider = ({children}) => {
     }
 
     const HandleEditarMobileAdmin = () => {
-        setModalEditarMobileAdmin(!modalEditarMobileAdmin)
+        setModalEditarMobileAdmin(!modalEditarMobileAdmin)        
+        setMobiles3({})
     }
 
     const handleModalMostrarMobile = mobiles2 => {
@@ -296,8 +299,8 @@ const ReferenciaProvider = ({children}) => {
         setModalEditarMobile(true)
     }
 
-    const handleModalEditarMobileadmin = mobiles2 => {
-        setMobiles2(mobiles2)
+    const handleModalEditarMobileadmin = mobiles3 => {
+        setMobiles3(mobiles3)
         setModalEditarMobileAdmin(true)
     }
 
@@ -326,6 +329,7 @@ const ReferenciaProvider = ({children}) => {
                 handleModalMostrarMobile,
                 setModalPreviewMobile,
                 mobiles2,
+                mobiles3,
                 reff,
                 handleModalEditarMobile,
                 HandleEditarMobile,
@@ -340,6 +344,7 @@ const ReferenciaProvider = ({children}) => {
                 HandleEditarMobileAdmin,
                 mostrarAlerta,
                 alerta,
+                cargando,
 
 
 

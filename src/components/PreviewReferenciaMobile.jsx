@@ -2,7 +2,7 @@ import React from 'react'
 import useReferencia from '../hooks/useReferencia'
 import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
 
-const PreviewReferencia = ({mobiles2}) => {
+const PreviewReferenciaMobile = ({mobiles2}) => {
 
   const { handleModalMostrarMobile } = useReferencia()
 
@@ -41,4 +41,4 @@ const PreviewReferencia = ({mobiles2}) => {
   )
 }
 
-export default PreviewReferencia
+export default PreviewReferenciaMobile
