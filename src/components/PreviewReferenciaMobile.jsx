@@ -45,10 +45,10 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
       const iframeclick = async () => {
         const bodyt1 = await document.getElementById(code).contentWindow.document.body
         const body = {id, code, referenceid, video, date, battery}
-        bodyt1.onclick = () => handleModalMostrarMobile(body)
+        bodyt1.onclick = () => handleModalMostrarMobile(mobiles2)
           }
         iframeclick()
-    }, [])  
+    }, [mobiles2])  
 
   return (
   <>
