@@ -17,7 +17,7 @@ const FormPreviewMobile = () => {
         if(params.id ) {
             setId(mobiles2.id)
             setCode(mobiles2.code)
-            setDate(mobiles2.fechaEntrega?.split('T')[0])
+            setDate(mobiles2.date?.split('T')[0])
             setReferenceId(mobiles2.ReferenceId)
             setVideo(mobiles2.video)
             return
@@ -28,7 +28,7 @@ const FormPreviewMobile = () => {
         setReferenceId('')
         setVideo('')
         
-    }, []);
+    }, [params.id]);
 
       // Iframe Body Onclick
   useEffect(() => {
@@ -38,9 +38,7 @@ const FormPreviewMobile = () => {
       bodyt.onclick = () => handleModalEditarMobileadmin(body)
       }
     iframeclick()
-}, [params.id])  
-
-    console.log(id, code, referenceId, video)
+}, [params.id])
 
     const mobilefiltrado = ref.filter(function(el){
         return (el.id == params.id)
@@ -63,7 +61,7 @@ const FormPreviewMobile = () => {
     <>
         <div className='lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] lg:flex lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] lg:items-center'>
             <iframe width="432.89" height="660.25"
-            src={`https://www.youtube-nocookie.com/embed/${video}?autoplay=1&origin=${import.meta.env.VITE_BACKEND_URL}`}
+            src={`https://www.youtube-nocookie.com/embed/${video}?autoplay=0&origin=${import.meta.env.VITE_BACKEND_URL}`}
             className='my-[11.29px] h-[400px] sm:w-[432px] sm:h-[660.25px] w-[300px] rounded-[19.27px] gap-[15.41px]'
             title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen>
