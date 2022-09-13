@@ -3,8 +3,11 @@ import useReferencia from '../hooks/useReferencia'
 import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
 import ModalEditarMobileAdmin from '../paginasAdmin/ModalEditarMobileAdmin'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
+
+  const params = useParams()
 
   const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
 

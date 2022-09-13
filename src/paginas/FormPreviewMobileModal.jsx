@@ -28,7 +28,7 @@ const FormPreviewMobile = () => {
         setReferenceId('')
         setVideo('')
         
-    }, [params.id]);
+    }, [params.id])
 
       // Iframe Body Onclick
   useEffect(() => {
