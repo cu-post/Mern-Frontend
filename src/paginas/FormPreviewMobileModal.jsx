@@ -34,7 +34,6 @@ const FormPreviewMobile = () => {
   useEffect(() => {
     const iframeclick = async () => {
       const bodyt = await document.getElementById(code).contentWindow.document.body
-      console.log(bodyt)
       const body = {id, code, referenceId, video}
       bodyt.onclick = () => handleModalEditarMobileadmin(body)
       }
