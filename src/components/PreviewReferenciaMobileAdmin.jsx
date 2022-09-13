@@ -13,27 +13,30 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
   console.log(mobiles3)
 
-  // Iframe Body Onclick
-  const [id, setId] = useState('')
-  const [code, setCode] = useState('')
-  const [date, setDate] = useState('')
-  const [referenceid, setReferenceid] = useState('')
-  const [video, setVideo] = useState('')
+// Iframe Body Onclick
+const [id, setId] = useState('')
+const [code, setCode] = useState('')
+const [date, setDate] = useState('')
+const [referenceid, setReferenceid] = useState('')
+const [video, setVideo] = useState('')
+const [battery, setBattery] = useState('')
 
-  useEffect(() => {
-      if(params.id ) {
-          setId(mobiles3.id)
-          setCode(mobiles3.code)
-          setDate(mobiles3.date?.split('T')[0])
-          setReferenceid(mobiles3.Referenceid)
-          setVideo(mobiles3.video)
-          return
-      } 
-      setId('')
-      setCode('')
-      setDate('')
-      setReferenceid('')
-      setVideo('')
+useEffect(() => {
+    if(params.id ) {
+        setId(mobiles3.id)
+        setCode(mobiles3.code)
+        setDate(mobiles3.date)
+        setReferenceid(mobiles3.Referenceid)
+        setVideo(mobiles3.video)
+        setBattery(mobiles3.battery)
+        return
+    } 
+    setId('')
+    setCode('')
+    setDate('')
+    setReferenceid('')
+    setVideo('')
+    setBattery('')
       
   }, [params.id]);
 
@@ -41,14 +44,11 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 useEffect(() => {
   const iframeclick = async () => {
     const bodyt = await document.getElementById(code).contentWindow.document.body
-    console.log(bodyt)
-    const body = {id, code, referenceid, video}
-    bodyt.onclick = () => handleModalEditarMobileadmin(body)
-    }
-  iframeclick()
-}, [params.id])  
-
-  console.log(id, code, referenceid, video)
+    const body = {id, code, referenceid, video, date, battery}
+    bodyt.onclick = () => handleModalMostrarMobile(body)
+      }
+    iframeclick()
+}, [])  
 
 
   return (
@@ -70,7 +70,7 @@ useEffect(() => {
           <iframe width="180" height="315"
           src={`https://www.youtube.com/embed/${video}`}
           className='mt-6 mb-3 rounded-[24.43px]'
-          title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          title="YouTube video player" allow=" autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           >
           </iframe>
           </div>     

@@ -19,6 +19,7 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
   const [date, setDate] = useState('')
   const [referenceid, setReferenceid] = useState('')
   const [video, setVideo] = useState('')
+  const [battery, setBattery] = useState('')
 
   useEffect(() => {
       if(params.id ) {
@@ -27,6 +28,7 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
           setDate(mobiles2.date)
           setReferenceid(mobiles2.Referenceid)
           setVideo(mobiles2.video)
+          setBattery(mobiles2.battery)
           return
       } 
       setId('')
@@ -34,21 +36,19 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
       setDate('')
       setReferenceid('')
       setVideo('')
+      setBattery('')
       
   }, [params.id]);
 
     // Iframe Body Onclick
-useEffect(() => {
-  const iframeclick = async () => {
-    const bodyt = await document.getElementById(code).contentWindow.document.body
-    console.log(bodyt)
-    const body = {id, code, referenceid, video}
-    bodyt.onclick = () => handleModalEditarMobileadmin(body)
-    }
-  iframeclick()
-}, [params.id])  
-
-  console.log(id, code, referenceid, video)
+    useEffect(() => {
+      const iframeclick = async () => {
+        const bodyt1 = await document.getElementById(code).contentWindow.document.body
+        const body = {id, code, referenceid, video, date, battery}
+        bodyt1.onclick = () => handleModalMostrarMobile(body)
+          }
+        iframeclick()
+    }, [])  
 
   return (
   <>
@@ -63,7 +63,7 @@ useEffect(() => {
         <iframe width="180" height="315"
         src={`https://www.youtube.com/embed/${video}`}
         className='mt-6 mb-3 rounded-[24.43px]'
-        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        title="YouTube video player" allow=" autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         >
         </iframe>
         </div>      
