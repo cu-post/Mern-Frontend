@@ -6,7 +6,7 @@ import Alerta from '../components/Alerta';
 const FormularioReferenciaAdminMobile = () => {
     const params = useParams();
 
-    const { nuevoReferenciaMobile, alerta, mostrarAlerta} = useReferencia();   
+    const { nuevoReferenciaMobile, alerta, mostrarAlerta, HandleAñadirReferenciaMobile} = useReferencia();   
 
     const referenceId = params.id
     const [video, setVideo] = useState('')
@@ -35,18 +35,10 @@ const FormularioReferenciaAdminMobile = () => {
     
     const { msg } = alerta
 
-    const refresh = () => {
-        try {                     
-            location.reload();
-        } catch (error) {
-            
-        }        
-    }
-
-    return (
+        return (
         <>
                 <button 
-                    onClick={refresh}
+                    onClick={HandleAñadirReferenciaMobile}
                     className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
                     justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
                 </button> 
