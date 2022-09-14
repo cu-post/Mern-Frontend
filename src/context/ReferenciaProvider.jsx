@@ -299,7 +299,8 @@ const ReferenciaProvider = ({children}) => {
         setMobiles3({})
     }
 
-    const handleModalMostrarMobile = mobiles2 => {
+    const handleModalMostrarMobile = mobiles3 => {
+        setMobiles2(mobiles3)
         setModalPreviewMobile(true)
     }
 
