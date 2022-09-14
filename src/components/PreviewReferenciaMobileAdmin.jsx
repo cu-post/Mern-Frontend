@@ -42,8 +42,7 @@ useEffect(() => {
 useEffect(() => {
   const iframeclick = async () => {
     const bodyt = await document.getElementById(code).contentWindow.document.body
-    const body = {id, code, referenceid, video, date, battery}
-    bodyt.onclick = () => handleModalMostrarMobile(body)
+    bodyt.onclick = () => handleModalMostrarMobile(mobiles3)
       }
     iframeclick()
 }, [])  

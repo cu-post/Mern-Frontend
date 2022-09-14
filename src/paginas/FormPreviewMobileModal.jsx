@@ -81,7 +81,7 @@ const FormPreviewMobile = ({mobiles3}) => {
                     {mobilefiltrado.map(x => x.reference)}
                 </div>
                 <div className='flex justify-center text-[40.63px] text-white'>
-                    Codigo: {mobiles3.code}
+                    Codigo: {code}
                 </div>
                 <div className='flex justify-center text-[40.63px] text-white   '>
                 {''}Bateria: {battery}%

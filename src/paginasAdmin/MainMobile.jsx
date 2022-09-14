@@ -20,7 +20,7 @@ const Main = () => {
             mobilefiltrado.map(mobiles => (
               <PreviewReferenciaMobile
                         key={mobiles.id}
-                        mobiles2={mobiles}
+                        mobiles3={mobiles}
                     />
             ))
           }

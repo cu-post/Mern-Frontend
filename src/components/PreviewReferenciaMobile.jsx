@@ -4,14 +4,12 @@ import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-const PreviewReferenciaMobile = ({mobiles2}) => {
+const PreviewReferenciaMobile = ({mobiles3}) => {
 
   
   const params = useParams()
 
   const { handleModalMostrarMobile } = useReferencia()
-
-  console.log(mobiles2)
 
   // Iframe Body Onclick
   const [id, setId] = useState('')
@@ -23,12 +21,12 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
 
   useEffect(() => {
       if(params.id ) {
-          setId(mobiles2.id)
-          setCode(mobiles2.code)
-          setDate(mobiles2.date)
-          setReferenceid(mobiles2.Referenceid)
-          setVideo(mobiles2.video)
-          setBattery(mobiles2.battery)
+          setId(mobiles3.id)
+          setCode(mobiles3.code)
+          setDate(mobiles3.date)
+          setReferenceid(mobiles3.Referenceid)
+          setVideo(mobiles3.video)
+          setBattery(mobiles3.battery)
           return
       } 
       setId('')
@@ -44,11 +42,10 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
     useEffect(() => {
       const iframeclick = async () => {
         const bodyt1 = await document.getElementById(code).contentWindow.document.body
-        const body = {id, code, referenceid, video, date, battery}
-        bodyt1.onclick = () => handleModalMostrarMobile(mobiles2)
+        bodyt1.onclick = () => handleModalMostrarMobile(mobiles3)
           }
         iframeclick()
-    }, [mobiles2])  
+    }, [])  
 
   return (
   <>
@@ -67,18 +64,21 @@ const PreviewReferenciaMobile = ({mobiles2}) => {
         >
         </iframe>
         </div>      
-        <button onClick={() => handleModalMostrarMobile(mobiles2)} className='flex-col items-center flex'>
-          <div className='w-fit pl-4 pr-4 pb-4'>
-            {referenceid}
-            <div 
-            className='bg-white w-fit px-4 py-1 mb-6 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
-                {''}Ver 
+        <button onClick={() => handleModalMostrarMobile(mobiles3)} className='flex-col items-center flex'>
+            <div className='w-fit pr-2 pb-2'>
+              <div 
+              className='bg-white w-fit px-4 py-1 mb-10 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
+                  {''}Ver codigo: {code}
+                  <div className='text-sm'>
+                  {''}Bateria: {battery}%
+                  </div>
+              </div>
             </div>
-          </div>
         </button>   
       </div>         
     </div>    
-    <ModalPreviewMobile/>
+    <ModalPreviewMobile
+    mobiles3={mobiles3}/>
   </>
     
   )
