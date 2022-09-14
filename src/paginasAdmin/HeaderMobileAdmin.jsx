@@ -19,7 +19,9 @@ const HeaderMobileAdmin = () => {
     } 
   }
 
-  const usuariosFiltrados1 = busqueda === '' ? [] : mobiles.filter(ref => ref.code == busqueda)
+  const referenceIdd = mobiles.filter(x => x.referenceId == params.id)
+  
+  const usuariosFiltrados1 = busqueda === '' ? [] : referenceIdd.filter(ref => ref.code.toString().includes(busqueda.toLowerCase()))
 
   return (
     <>

@@ -144,8 +144,10 @@ const ReferenciaProvider = ({children}) => {
             setAlerta({})
             window.location.reload();
         }, 3000);
-    } catch (error) {
-        console.log(error)
+    } catch (error) {setAlerta({
+        msg: `[${error}], Problemas!`,
+        error: true
+    })
     }
 }
 
@@ -177,8 +179,10 @@ const ReferenciaProvider = ({children}) => {
                 setAlerta({})
                 window.location.reload();
             }, 3000);
-        } catch (error) {
-            console.log(error)
+        } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
         }
     }
 
@@ -207,9 +211,11 @@ const ReferenciaProvider = ({children}) => {
             window.location.reload();
         }, 3000);
 
-          } catch (error) {
-              console.log(error)
-          }
+          } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
+        }
     }
 
     const nuevoReferencia = async ref1 => {        
@@ -226,8 +232,10 @@ const ReferenciaProvider = ({children}) => {
             setAlerta({})
             window.location.reload();
         }, 3000);
-    } catch (error) {
-        console.log(error)
+    } catch (error) {setAlerta({
+        msg: `[${error}], Problemas!`,
+        error: true
+    })
     }
 }
 
@@ -258,8 +266,10 @@ const ReferenciaProvider = ({children}) => {
                 setAlerta({})
                 window.location.reload();
             }, 3000);
-        } catch (error) {
-            console.log(error)
+        } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
         }
     }
 
