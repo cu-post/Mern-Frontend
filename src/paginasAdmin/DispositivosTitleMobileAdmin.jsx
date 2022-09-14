@@ -1,9 +1,11 @@
 import useReferencia from '../hooks/useReferencia';
 import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const DispositivosTitleMobile = () => {
+  const navigate = useNavigate();
 
   const params = useParams();
   const { ref, mobile } = useReferencia()
