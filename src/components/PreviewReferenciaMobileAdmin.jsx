@@ -11,8 +11,6 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
   const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
 
-  console.log(mobiles3)
-
 // Iframe Body Onclick
 const [id, setId] = useState('')
 const [code, setCode] = useState('')
@@ -75,11 +73,13 @@ useEffect(() => {
           </iframe>
           </div>     
           <button onClick={() => handleModalMostrarMobile(mobiles3)} className='flex-col items-center flex'>
-            <div className='w-fit pl-4 pr-4 pb-4'>
-              {referenceid}
+            <div className='w-fit pr-2 pb-2'>
               <div 
-              className='bg-white w-fit px-4 py-1 mb-6 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
-                  {''}Ver
+              className='bg-white w-fit px-4 py-1 mb-10 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
+                  {''}Ver codigo: {code}
+                  <div className='text-sm'>
+                  {''}Bateria: {battery}%
+                  </div>
               </div>
             </div>
           </button>   
@@ -87,7 +87,8 @@ useEffect(() => {
       </div>
       
     </div>    
-    <ModalPreviewMobile/>
+    <ModalPreviewMobile
+    mobiles3={mobiles3}/>
     <ModalEditarMobileAdmin/>
   </>
     
