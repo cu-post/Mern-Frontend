@@ -6,15 +6,6 @@ import FormularioReferenciaAdminEditar from './FormularioReferenciaAdminEditar'
 
 const ModalEditarMobile = () => {
 
-    const refresh = () => {
-        try {                     
-            location.reload();
-        } catch (error) {
-            
-        }
-        
-    }
-
     const {modalEditarMobile, HandleEditarMobile} = useReferencia()
  
     return (
@@ -55,7 +46,7 @@ const ModalEditarMobile = () => {
                                 <button
                                     type="button"
                                     className="bg-white rounded-md absolute flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                    onClick={ refresh }
+                                    onClick={ HandleEditarMobile }
                                 >
                                 <span className="sr-only">Cerrar</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
