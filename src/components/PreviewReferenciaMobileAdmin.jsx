@@ -41,7 +41,7 @@ useEffect(() => {
     // Iframe Body Onclick
 useEffect(() => {
   const iframeclick = async () => {
-    const bodyt = await document.getElementById(code).contentWindow.document.body
+    const bodyt = await document.getElementById(mobiles3.code).contentWindow.document.body
     bodyt.onclick = () => handleModalMostrarMobile(mobiles3)
       }
     iframeclick()
@@ -61,7 +61,7 @@ useEffect(() => {
       <div className='items-center justify-center flex'>
         <div className="flex justify-center flex-col h-fit w-fit">
           <div className='flex justify-center items-center flex-col'>
-          <iframe id={code} onLoad={() => iframeclick()}
+          <iframe id={mobiles3.code} onLoad={() => iframeclick()}
           className="absolute" width="190" height="335">
           </iframe>
           <iframe width="180" height="315"

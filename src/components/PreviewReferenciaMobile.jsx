@@ -36,12 +36,12 @@ const PreviewReferenciaMobile = ({mobiles3}) => {
       setVideo('')
       setBattery('')
       
-  }, [params.id]);
+  }, []);
 
     // Iframe Body Onclick
     useEffect(() => {
       const iframeclick = async () => {
-        const bodyt1 = await document.getElementById(code).contentWindow.document.body
+        const bodyt1 = await document.getElementById(mobiles3.code).contentWindow.document.body
         bodyt1.onclick = () => handleModalMostrarMobile(mobiles3)
           }
         iframeclick()
@@ -54,7 +54,7 @@ const PreviewReferenciaMobile = ({mobiles3}) => {
       </div>
       <div className="flex justify-center flex-col h-fit w-fit  mt-5">
         <div className='flex justify-center items-center flex-col'>
-        <iframe id={code} onLoad={() => iframeclick()}
+        <iframe id={mobiles3.code} onLoad={() => iframeclick()}
         className="absolute" width="190" height="335">
         </iframe>
         <iframe width="180" height="315"
