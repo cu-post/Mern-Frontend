@@ -10,7 +10,7 @@ const ModalAñadirReferencia = () => {
  
     return (
         <Transition.Root show={ modalAñadirReferencia } as={Fragment}>
-            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto items-center flex" onClose={ HandleAñadirReferencia }>
+            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandleAñadirReferencia }>
                 <div className="flex items-center justify-center min-h-screen w-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
@@ -27,7 +27,7 @@ const ModalAñadirReferencia = () => {
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden items-center justify-center align-middle h-screen w-screen" aria-hidden="true">
+                    <span className="hidden overflow-visible items-center justify-center align-middle h-screen w-screen" aria-hidden="true">
                         &#8203;
                     </span>
 

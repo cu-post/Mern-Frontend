@@ -6,21 +6,21 @@ import { useEffect } from 'react'
 const DispositivosTitleMobile = () => {
 
   const params = useParams();
-  const { ref } = useReferencia()
+  const { ref, mobile } = useReferencia()
 
-  const reference = ref.filter(function(el){
-    return (el.id == params.id)
-  })  
+  const mobileAllow = params.id == mobile.code
+
+  const reference = ref.filter(x => x.id == params.id)
 
     return (
-      <>
-      <div className='flex flex-col sm:flex-row md:w-3/5 p-4 md:ml-20 justify-center items-center md:justify-between'>
-      <span className='font-bold text-3xl '>{reference.map(x => x.reference)}</span>
-        <a className='font-bold text-3xl w-2/2 p-4'
-        href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/perfil`}
+      <>  
+      <div className='flex flex-col-reverse sm:flex-row md:w-full p-4 sm:ml-20 md:ml-10 2xl:w-1/2 justify-center items-center md:justify-between'>
+      <span className='font-bold text-3xl '>{!mobileAllow ? reference.map(x => x.reference) : mobile.code}</span>
+        <button className='font-bold text-3xl sm:w-2/2 p-4'
+        onClick={mobileAllow ? (() => navigate(`/mobile/${mobile.referenceId}`)) : (() => navigate("/")) }
         >
-        <div className='h-[69.59px] w-[200.12px] bg-[#8F00FF] items-center flex rounded-[30px] justify-center text-white py-[15px] px-[20px] gap-[10px]'>Dispositivos</div>
-        </a>      
+        <div className='h-[69.59px] w-[200.12px] bg-[#8F00FF] items-center flex rounded-[30px] justify-center text-white py-[15px] px-[20px] gap-[10px]'>{mobileAllow ?"Mobiles" : "Dispositivos"}</div>
+        </button>
       </div>        
       </>
     )
