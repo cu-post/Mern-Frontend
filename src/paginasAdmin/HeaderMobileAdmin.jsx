@@ -28,7 +28,7 @@ const HeaderMobileAdmin = () => {
   return (
     <>
     <div className="flex justify-center items-center flex-row gap-[5px] lg:ml-44 xl:ml-0 lg:w-1/4 xl:w-1/5 h-[59.34px] mt-[2.84px]">
-      <img src="../Capa 2.png" className="lg:ml-28 xl:ml-30 2xl:ml-0 w-[59.81px] h-[38.32px] sm:w-[89.81px] sm:h-[51.32px] mt-[0.84px]" alt="..." />
+      <img src="/Capa 2.png" className="lg:ml-28 xl:ml-30 2xl:ml-0 w-[59.81px] h-[38.32px] sm:w-[89.81px] sm:h-[51.32px] mt-[0.84px]" alt="..." />
       <div  onClick={() => navigate1("/")}
       className="text-[30px] md:text-[35px] lg:text-[43.58px] flex-shrink-0 font-semibold text-[#481373] hover:cursor-pointer">Celulares Usados</div>
   </div>
@@ -38,7 +38,7 @@ const HeaderMobileAdmin = () => {
           onClick={handleCerrarSesion}
           className='p-3 ml-4 lg:ml-0 rounded-[9.56px] h-[57.73584747314453px] w-[57.73584747314453px] bg-[#FF5E59]'
           >
-              <img src="../exit_to_app.png" alt="" />
+              <img src="/exit_to_app.png" alt="" />
           </button>
           <div className="flex absolute inset-y-0 left-20 md:left-20 lg:left-16 xl:left-16 2xl:left-16 items-center pl-3 pointer-events-none">
               <svg aria-hidden="true" className="w-5 h-5 text-white dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
