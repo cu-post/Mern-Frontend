@@ -68,7 +68,7 @@ const PreviewReferenciaMobile = ({mobiles3}) => {
             <div className='w-fit pr-2 pb-2'>
               <div 
               className='bg-white w-fit px-4 py-1 mb-10 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
-                  {''}Còdigo: {code}
+                  {''}código: {code}
                   <div className='text-sm'>
                   {''}Bateria: {battery}%
                   </div>
