@@ -1,10 +1,7 @@
 import useReferencia from '../hooks/useReferencia';
 import {useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-
-  const navigate = useNavigate();
 
   const [ busqueda, setBusqueda ] = useState('')
   const { ref } = useReferencia()
@@ -38,7 +35,7 @@ const Header = () => {
                         key={ref.id}
                         value={ref}
                         className="w-1/2 relative"
-                        href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${ref.id}`}
+                        href={!ref.agotado ? `${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${ref.id}` : ""}
                     >
                       <p className='bg-white rounded-md py-1 px-1 w-fit my-1 gap-1 shadow-lg'>
                         {ref.reference}
