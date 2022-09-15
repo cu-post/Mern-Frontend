@@ -138,7 +138,7 @@ const FormularioReferenciaAdminEditarMobile = ({mobiles3}) => {
 
                     <input
                         type="submit"
-                        value={mobiles3.id ? 'Actualizar Referencia': 'Crear Referencia'}
+                        value={mobiles3.id ? 'Actualizar Mobile': 'Crear Mobile'}
                         className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                         
                     />
