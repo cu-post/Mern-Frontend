@@ -1,7 +1,10 @@
 import useReferencia from '../hooks/useReferencia';
 import {useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+
+  const navigate = useNavigate();
 
   const [ busqueda, setBusqueda ] = useState('')
   const { ref } = useReferencia()
