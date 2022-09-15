@@ -4,7 +4,7 @@ import useReferencia from '../hooks/useReferencia'
 import FormularioReferenciaAdminEditarMobile from './FormularioReferenciaAdminEditarMobile'
 
 
-const ModalEditarMobileAdmin = () => {
+const ModalEditarMobileAdmin = ({mobiles3}) => {
 
     const {modalEditarMobileAdmin, HandleEditarMobileAdmin} = useReferencia()
  
@@ -47,7 +47,8 @@ const ModalEditarMobileAdmin = () => {
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900 ">
                                         
                                     </Dialog.Title>
-                                    <FormularioReferenciaAdminEditarMobile/>
+                                    <FormularioReferenciaAdminEditarMobile
+                                    mobiles3={mobiles3}/>
                                 </div>
                             </div>
                         </div>

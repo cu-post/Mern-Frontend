@@ -125,9 +125,15 @@ const ReferenciaProvider = ({children}) => {
             window.location.reload();
         }, 3000);
 
-          } catch (error) {
-              console.log(error)
-          }
+          } catch (error) {setAlerta({
+            msg: 'Sin Short Url',
+            error: true
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+        }, 3000);
+        }
     }
     
     const nuevoReferenciaMobile = async ref1 => {        
@@ -171,7 +177,7 @@ const ReferenciaProvider = ({children}) => {
             setMobiles(mobileActualizados)                
 
             setAlerta({
-                msg: data.msg,
+                msg: 'Mobile Eliminado Correctamente',
                 error: false
             })
 

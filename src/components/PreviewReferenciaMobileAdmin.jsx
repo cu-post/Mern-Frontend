@@ -2,41 +2,11 @@ import React from 'react'
 import useReferencia from '../hooks/useReferencia'
 import ModalPreviewMobile from '../paginas/ModalPreviewMobile'
 import ModalEditarMobileAdmin from '../paginasAdmin/ModalEditarMobileAdmin'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
-  const params = useParams()
-
   const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
-
-// Iframe Body Onclick
-const [id, setId] = useState('')
-const [code, setCode] = useState('')
-const [date, setDate] = useState('')
-const [referenceid, setReferenceid] = useState('')
-const [video, setVideo] = useState('')
-const [battery, setBattery] = useState('')
-
-useEffect(() => {
-    if(params.id ) {
-        setId(mobiles3.id)
-        setCode(mobiles3.code)
-        setDate(mobiles3.date)
-        setReferenceid(mobiles3.Referenceid)
-        setVideo(mobiles3.video)
-        setBattery(mobiles3.battery)
-        return
-    } 
-    setId('')
-    setCode('')
-    setDate('')
-    setReferenceid('')
-    setVideo('')
-    setBattery('')
-      
-  }, [params.id]);
 
     // Iframe Body Onclick
 useEffect(() => {
@@ -65,7 +35,7 @@ useEffect(() => {
           className="absolute" width="190" height="335">
           </iframe>
           <iframe width="180" height="315"
-          src={`https://www.youtube.com/embed/${video}`}
+          src={`https://www.youtube.com/embed/${mobiles3.video}`}
           className='mt-6 mb-3 rounded-[24.43px]'
           title="YouTube video player" allow=" autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           >
@@ -75,9 +45,9 @@ useEffect(() => {
             <div className='w-fit pr-2 pb-2'>
               <div 
               className='bg-white w-fit px-4 py-1 mb-10 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px]'>
-                  {''}Codigò: {code}
+                  {''}Codigò: {mobiles3.code}
                   <div className='text-sm'>
-                  {''}Bateria: {battery}%
+                  {''}Bateria: {mobiles3.battery}%
                   </div>
               </div>
             </div>
@@ -88,7 +58,8 @@ useEffect(() => {
     </div>    
     <ModalPreviewMobile
     mobiles3={mobiles3}/>
-    <ModalEditarMobileAdmin/>
+    <ModalEditarMobileAdmin
+    mobiles3={mobiles3}/>
   </>
     
   )
