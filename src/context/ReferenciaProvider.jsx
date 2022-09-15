@@ -151,14 +151,13 @@ const ReferenciaProvider = ({children}) => {
             window.location.reload();
         }, 3000);
     } catch (error) {setAlerta({
-        msg: `[${error}], Problemas!`,
+        msg: 'Sin Short Url',
         error: true
     })
     }
 }
 
     const eliminarReferenciaMobile = async mobile => {
-        console.log(mobile)
         try {
             const token = localStorage.getItem('token')
             if(!token) return
