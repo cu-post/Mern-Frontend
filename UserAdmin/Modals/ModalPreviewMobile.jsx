@@ -38,7 +38,7 @@ const ModalPreviewMobile = ({mobiles3}) => {
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden sm:inline-block lg:inline-table sm:align-middle sm:h-screen lg:h-fit lg:w-fit lg:align-top overflow-y-auto  " aria-hidden="true">
+                    <span className="hidden sm:inline-block lg:inline-table sm:align-middle sm:h-screen lg:h-fit lg:w-fit lg:align-top overflow-y-auto" aria-hidden="true">
                         &#8203;
                     </span>
 
