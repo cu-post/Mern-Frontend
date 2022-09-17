@@ -10,8 +10,8 @@ const ModalAñadirReferencia = () => {
  
     return (
         <Transition.Root show={ modalAñadirReferencia } as={Fragment}>
-            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto items-center flex" onClose={ HandleAñadirReferencia }>
-                <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandleAñadirReferencia }>
+                <div className="flex items-center justify-center min-h-screen w-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -27,7 +27,7 @@ const ModalAñadirReferencia = () => {
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+                    <span className="hidden overflow-visible items-center justify-center align-middle h-screen w-screen" aria-hidden="true">
                         &#8203;
                     </span>
 
@@ -40,11 +40,11 @@ const ModalAñadirReferencia = () => {
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                            <div className="inline-block align-bottom rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                            <div className="inline-block align-middle rounded-lg px-4 pt-5 pb-4 text-left overflow-auto transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
 
 
 
-                            <div className="sm:flex sm:items-start flex justify-center">
+                            <div className="sm:flex sm:items-start flex justify-center ">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900">
                                         

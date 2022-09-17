@@ -14,6 +14,7 @@ const ReferenciaProvider = ({children}) => {
     const [ mobiles, setMobiles] = useState([]);
     const [ mobile, setMobile] = useState([]);
     const [ mobiles2, setMobiles2] = useState({});
+    const [ mobiles3, setMobiles3] = useState({});
     const [ reff, setReff] = useState({});
     const [ buscador, setBuscador] = useState(false);
     const [ modalAñadirReferencia , setModalAñadirReferencia] = useState(false);
@@ -124,9 +125,15 @@ const ReferenciaProvider = ({children}) => {
             window.location.reload();
         }, 3000);
 
-          } catch (error) {
-              console.log(error)
-          }
+          } catch (error) {setAlerta({
+            msg: 'Sin Short Url',
+            error: true
+        })
+
+        setTimeout(() => {
+            setAlerta({})
+        }, 3000);
+        }
     }
     
     const nuevoReferenciaMobile = async ref1 => {        
@@ -143,13 +150,14 @@ const ReferenciaProvider = ({children}) => {
             setAlerta({})
             window.location.reload();
         }, 3000);
-    } catch (error) {
-        console.log(error)
+    } catch (error) {setAlerta({
+        msg: 'Sin Short Url',
+        error: true
+    })
     }
 }
 
     const eliminarReferenciaMobile = async mobile => {
-        console.log(mobile)
         try {
             const token = localStorage.getItem('token')
             if(!token) return
@@ -168,7 +176,7 @@ const ReferenciaProvider = ({children}) => {
             setMobiles(mobileActualizados)                
 
             setAlerta({
-                msg: data.msg,
+                msg: 'Mobile Eliminado Correctamente',
                 error: false
             })
 
@@ -176,8 +184,10 @@ const ReferenciaProvider = ({children}) => {
                 setAlerta({})
                 window.location.reload();
             }, 3000);
-        } catch (error) {
-            console.log(error)
+        } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
         }
     }
 
@@ -206,9 +216,11 @@ const ReferenciaProvider = ({children}) => {
             window.location.reload();
         }, 3000);
 
-          } catch (error) {
-              console.log(error)
-          }
+          } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
+        }
     }
 
     const nuevoReferencia = async ref1 => {        
@@ -225,8 +237,10 @@ const ReferenciaProvider = ({children}) => {
             setAlerta({})
             window.location.reload();
         }, 3000);
-    } catch (error) {
-        console.log(error)
+    } catch (error) {setAlerta({
+        msg: `[${error}], Problemas!`,
+        error: true
+    })
     }
 }
 
@@ -257,8 +271,10 @@ const ReferenciaProvider = ({children}) => {
                 setAlerta({})
                 window.location.reload();
             }, 3000);
-        } catch (error) {
-            console.log(error)
+        } catch (error) {setAlerta({
+            msg: `[${error}], Problemas!`,
+            error: true
+        })
         }
     }
 
@@ -276,6 +292,7 @@ const ReferenciaProvider = ({children}) => {
 
     const HandlePreviewMobile = () => {
         setModalPreviewMobile(!modalPreviewMobile)
+        setMobiles2({})
     }
 
     const HandleEditarMobile = () => {
@@ -283,11 +300,12 @@ const ReferenciaProvider = ({children}) => {
     }
 
     const HandleEditarMobileAdmin = () => {
-        setModalEditarMobileAdmin(!modalEditarMobileAdmin)
+        setModalEditarMobileAdmin(!modalEditarMobileAdmin)        
+        setMobiles3({})
     }
 
-    const handleModalMostrarMobile = mobiles2 => {
-        setMobiles2(mobiles2)
+    const handleModalMostrarMobile = mobiles3 => {
+        setMobiles2(mobiles3)
         setModalPreviewMobile(true)
     }
 
@@ -296,8 +314,7 @@ const ReferenciaProvider = ({children}) => {
         setModalEditarMobile(true)
     }
 
-    const handleModalEditarMobileadmin = mobiles2 => {
-        setMobiles2(mobiles2)
+    const handleModalEditarMobileadmin = mobiles3 => {
         setModalEditarMobileAdmin(true)
     }
 
@@ -326,6 +343,7 @@ const ReferenciaProvider = ({children}) => {
                 handleModalMostrarMobile,
                 setModalPreviewMobile,
                 mobiles2,
+                mobiles3,
                 reff,
                 handleModalEditarMobile,
                 HandleEditarMobile,
@@ -340,6 +358,8 @@ const ReferenciaProvider = ({children}) => {
                 HandleEditarMobileAdmin,
                 mostrarAlerta,
                 alerta,
+                cargando,
+                
 
 
 

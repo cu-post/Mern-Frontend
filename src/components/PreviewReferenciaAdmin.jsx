@@ -25,16 +25,18 @@ const PreviewReferenciaAdmin = ({reff}) => {
           className='h-[221.46px] w-fit p-4 rounded-[24.43px]'
           src={img} alt="" />
         </div>
-        <div className='flex flex-col'>
-          <div className='w-fit pl-4 pr-4 pb-4'>
+        <div className='flex flex-col  '>
             {reference}
-            <div>            
-              Ref: {id}
+            <div className='flex flex-col items-end'>
+              <div className='w-fit pl-4 pr-4 pb-4 flex items-baseline place-items-end'>
+                <div>            
+                  Ref: {id} {' '}
+                </div>
+                <div
+                  className={`${!agotado ? 'bg-white bottom-0 ' : 'bg-white text-black'} ml-3 gap-[10.65px] p-[10.65px] mt-[10px] w-fit px-4 py-3 text-[#8F00FF] uppercase font-bold text-[14.9167px] rounded-[22.38px]`}
+                  >{!agotado ? 'Disponible' : 'Agotado'}</div>
+              </div>
             </div>
-            <div
-              className={`${!agotado ? 'bg-white' : 'bg-white text-black'} gap-[10.65px] p-[10.65px] mt-[10px] w-fit px-4 py-3 text-[#8F00FF] uppercase font-bold text-[14.9167px] rounded-[22.38px]`}
-              >{!agotado ? 'Disponible' : 'Agotado'}</div>
-          </div>
         </div>          
       </a>
     </div>

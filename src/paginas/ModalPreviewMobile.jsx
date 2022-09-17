@@ -4,7 +4,7 @@ import useReferencia from '../hooks/useReferencia'
 import FormPreviewMobileModal from './FormPreviewMobileModal'
 
 
-const ModalPreviewMobile = () => {
+const ModalPreviewMobile = ({mobiles3}) => {
 
     const refresh = () => {
         try {                     
@@ -69,7 +69,8 @@ const ModalPreviewMobile = () => {
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900 ">
                                         
                                     </Dialog.Title>
-                                    <FormPreviewMobileModal/>
+                                    <FormPreviewMobileModal
+                                    mobiles3={mobiles3}/>
                                 </div>
                             </div>
                         </div>

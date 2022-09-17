@@ -6,16 +6,17 @@ import Alerta from '../components/Alerta';
 const FormularioReferenciaAdminMobile = () => {
     const params = useParams();
 
-    const { nuevoReferenciaMobile, alerta, mostrarAlerta} = useReferencia();   
+    const { nuevoReferenciaMobile, alerta, mostrarAlerta, HandleAñadirReferenciaMobile} = useReferencia();   
 
     const referenceId = params.id
     const [video, setVideo] = useState('')
     const [code, setCode] = useState('')
+    const [battery, setBattery] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault();
 
-        if([referenceId, video, code].includes('') ) {
+        if([referenceId, video, code, battery].includes('') ) {
             mostrarAlerta({
                 msg: 'Todos los Campos son Obligatorios',
                 error: true
@@ -25,28 +26,19 @@ const FormularioReferenciaAdminMobile = () => {
         }
 
         // Pasar los datos hacia el provider
-        await nuevoReferenciaMobile({referenceId, video, code})
+        await nuevoReferenciaMobile({referenceId, video, code, battery})
 
         setVideo('')
         setCode('')
+        setBattery('')
     }
     
     const { msg } = alerta
 
-    const refresh = () => {
-        try {                     
-            location.reload();
-        } catch (error) {
-            
-        }
-        
-    }
-
-
-    return (
+        return (
         <>
                 <button 
-                    onClick={refresh}
+                    onClick={HandleAñadirReferenciaMobile}
                     className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
                     justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
                 </button> 
@@ -92,6 +84,22 @@ const FormularioReferenciaAdminMobile = () => {
                             placeholder={code}
                             value={code}
                             onChange={e => setCode(e.target.value)}
+                        />                       
+                    </div>
+
+                    <div className='mb-5 flex flex-col'>
+                        <label
+                            className="text-white uppercase font-bold text-sm"
+                            htmlFor="battery"
+                        >Nivel de Bateria</label>
+
+                        <input
+                            id="battery"
+                            type="number"
+                            className="border w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                            placeholder={battery}
+                            value={battery}
+                            onChange={e => setBattery(e.target.value)}
                         />                       
                     </div>
 

@@ -4,7 +4,7 @@ import Alerta from '../components/Alerta';
 
 const FormularioReferenciaAdmin = () => {
 
-    const { submitReferencia, alerta, mostrarAlerta} = useReferencia();   
+    const { submitReferencia, alerta, mostrarAlerta, HandleAñadirReferencia} = useReferencia();   
 
     const [reference, setReference] = useState('')
     const [img, setImg] = useState('')
@@ -32,20 +32,10 @@ const FormularioReferenciaAdmin = () => {
     
     const { msg } = alerta
 
-    const refresh = () => {
-        try {                     
-            location.reload();
-        } catch (error) {
-            
-        }
-        
-    }
-
-
     return (
     <>
         <button 
-            onClick={refresh}
+            onClick={HandleAñadirReferencia}
             className='h-fit w-fit bg-[#8F00FF] flex items-end rounded-[30px]
             justify-center text-white mb-1 px-[15px] gap-[10px]'>Cerrar
         </button> 
