@@ -2,13 +2,11 @@ import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import useReferencia from '../hooks/useReferencia'
 import FormPreviewMobileModal from '../Forms/FormPreviewMobileModal'
-import { useState, useEffect } from 'react'
 
 
 const ModalPreviewMobile = ({mobiles3}) => {
 
     
-  const [code3, setCode3] = useState({})
 
     const refresh = () => {
         try {                     
@@ -18,18 +16,12 @@ const ModalPreviewMobile = ({mobiles3}) => {
         }
         
     }
-    useEffect(() => {
-        const c0d33 = document.getElementById("c0d3")
-        setCode3(c0d33)
-    },)
 
-    console.log("aqui", code3)
-
-    const {modalPreviewMobile, HandlePreviewMobile} = useReferencia()
+    const {modalPreviewMobile} = useReferencia()
  
     return (
         <Transition.Root show={ modalPreviewMobile } as={Fragment}>
-            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandlePreviewMobile }>
+            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ refresh }>
                 <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
@@ -46,7 +38,7 @@ const ModalPreviewMobile = ({mobiles3}) => {
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden sm:inline-block lg:inline-table sm:align-middle sm:h-screen lg:h-fit lg:w-fit lg:align-top" aria-hidden="true">
+                    <span className="hidden sm:inline-block lg:inline-table sm:align-middle sm:h-screen lg:h-fit lg:w-fit lg:align-top overflow-y-auto  " aria-hidden="true">
                         &#8203;
                     </span>
 

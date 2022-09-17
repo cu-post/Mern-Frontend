@@ -38,7 +38,7 @@ const FormPreviewMobile = ({}) => {
     // Iframe Body Onclick
   useEffect(() => {
     const iframeclick = async () => {
-      const bodyt = await document.getElementById(code).contentWindow.document.body     
+      const bodyt = await document.getElementById(mobiles2.code).contentWindow.document.body     
       const body = {id, code, referenceid, video, date, battery}
       bodyt.onclick = () => handleModalEditarMobileadmin(body)
       }
@@ -64,7 +64,7 @@ const FormPreviewMobile = ({}) => {
 
     return (
     <>
-        <div className='lg:w-[884.49px] h-fit lg:h-[706.83px] bg-[#FF5E59] lg:flex lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] justify-center lg:items-center'>
+        <div className='lg:w-[884.49px] h-fit lg:h-[706.83px] bg-gray-400 lg:flex lg:flex-row p-[12px] gap-[24.83px] rounded-[19.27px] justify-center lg:items-center'>
             <iframe id={code} onLoad={() => iframeclick()}
             width="432.89" height="660.25"
             src={`https://www.youtube-nocookie.com/embed/${video}?autoplay=0&origin=${import.meta.env.VITE_BACKEND_URL}`}
@@ -75,8 +75,9 @@ const FormPreviewMobile = ({}) => {
             <button 
             onClick={refresh}
             className='hidden lg:visible h-fit w-fit bg-[#8F00FF] items-center lg:flex rounded-[30px]
-            justify-center text-white py-[7px] px-[15px] gap-[10px] lg:fixed lg:top-0'>Cerrar</button> 
-            <div className='flex flex-col items-center justify-center ml-10 sm:ml-10 w-fit h-fit'>
+            justify-center text-white py-[7px] px-[15px] gap-[10px] lg:fixed lg:top-0'>Cerrar
+            </button> 
+            <div className='flex flex-col items-center justify-center w-full h-full'>
                 <div className='text-[40.63px] text-white flex flex-row'>
                     {mobilefiltrado.map(x => x.reference)}
                 </div>

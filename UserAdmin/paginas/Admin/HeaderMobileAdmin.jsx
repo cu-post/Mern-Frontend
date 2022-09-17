@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
 const HeaderMobileAdmin = () => {
+  
   const navigate1 = useNavigate();
 
   const [ busqueda, setBusqueda ] = useState('')
