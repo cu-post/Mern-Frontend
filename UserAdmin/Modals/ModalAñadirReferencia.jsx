@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import useReferencia from '../hooks/useReferencia'
-import EditarReferencia from './EditarReferencia'
+import EditarReferencia from '../paginas/EditarReferencia'
 
 
 const ModalAñadirReferencia = () => {

@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import useReferencia from '../hooks/useReferencia'
-import FormularioReferenciaAdminMobile from './FormularioReferenciaAdminMobile'
+import FormularioReferenciaAdmin from '../Formularios/FormularioReferenciaAdmin'
 
-const EditarReferenciaMobile = () => {
+const EditarReferencia = () => {
 
   const params = useParams();
   const { LoadReference } = useReferencia()
@@ -16,11 +16,11 @@ const EditarReferenciaMobile = () => {
 
     return (
       <> 
-        <div className="flex flex-col top-0">
-          <FormularioReferenciaAdminMobile/>
+        <div className="flex flex-col align-middle justify-center top-0">
+          <FormularioReferenciaAdmin/>
         </div>
       </>
     )
   }
 
-export default EditarReferenciaMobile
+export default EditarReferencia

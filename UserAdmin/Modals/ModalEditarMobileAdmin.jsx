@@ -1,17 +1,17 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import useReferencia from '../hooks/useReferencia'
-import EditarReferenciaMobile from './EditarReferenciaMobile'
+import FormularioReferenciaAdminEditarMobile from '../Formularios/FormularioReferenciaAdminEditarMobile'
 
 
-const ModalAñadirReferenciaMobile = () => {
+const ModalEditarMobileAdmin = ({mobiles3}) => {
 
-    const {modalAñadirReferenciaMobile, HandleAñadirReferenciaMobile} = useReferencia()
+    const {modalEditarMobileAdmin, HandleEditarMobileAdmin} = useReferencia()
  
     return (
-        <Transition.Root show={ modalAñadirReferenciaMobile } as={Fragment}>
-            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandleAñadirReferenciaMobile }>
-                <div className="flex items-center justify-center min-h-screen w-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <Transition.Root show={ modalEditarMobileAdmin } as={Fragment}>
+            <Dialog as="div" className="fixed inset-0 overflow-visible" onClose={ HandleEditarMobileAdmin }>
+                <div className="flex justify-center text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -22,12 +22,12 @@ const ModalAñadirReferenciaMobile = () => {
                         leaveTo="opacity-0"
                     >
                         <Dialog.Overlay 
-                            className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                            className="flex inset-0 bg-opacity-75 transition-opacity" 
                         />
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="hidden overflow-visible items-center justify-center align-middle h-screen w-screen" aria-hidden="true">
+                    <span className="overflow-visible inline-block align-middle h-screen" aria-hidden="false">
                         &#8203;
                     </span>
 
@@ -40,17 +40,15 @@ const ModalAñadirReferenciaMobile = () => {
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                            <div className="inline-block align-middle rounded-lg px-4 pt-5 pb-4 text-left overflow-auto transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                            <div className="inline-block align-bottom rounded-lg px-4 pt-5 pb-4 text-left transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
 
-
-
-
-                            <div className="sm:flex sm:items-start flex justify-center">
-                                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                                    <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900">
+                            <div className="flex justify-center w-full">
+                                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                    <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900 ">
                                         
                                     </Dialog.Title>
-                                    <EditarReferenciaMobile/>
+                                    <FormularioReferenciaAdminEditarMobile
+                                    mobiles3={mobiles3}/>
                                 </div>
                             </div>
                         </div>
@@ -61,4 +59,4 @@ const ModalAñadirReferenciaMobile = () => {
     )
 }
 
-export default ModalAñadirReferenciaMobile
+export default ModalEditarMobileAdmin

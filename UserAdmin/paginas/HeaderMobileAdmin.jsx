@@ -58,7 +58,7 @@ const HeaderMobileAdmin = () => {
                         key={mobiles.id}
                         value={mobiles}
                         className="w-1/2 relative"
-                        href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobileAdmin/${id}/modelo/${mobiles.code}`}
+                        href={`${import.meta.env.VITE_FRONTEND_Mobile_URL}/mobile/${id}/modelo/${mobiles.code}`}
                     >
                       <p className='bg-white rounded-md py-1 px-1 w-fit my-1 gap-1 shadow-lg'>
                         {mobiles.code}

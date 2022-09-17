@@ -21,7 +21,6 @@ const FormularioReferenciaAdminEditarMobile = ({mobiles3}) => {
     useEffect(() => {
         if( mobiles3.id ) {
             setReferenceId(mobiles3.referenceId)
-            setVideo(mobiles3.video)
             setCode(mobiles3.code)
             setBattery(mobiles3.battery)
         } 
@@ -130,7 +129,7 @@ const FormularioReferenciaAdminEditarMobile = ({mobiles3}) => {
                             id="vid"
                             type="text"
                             className="border w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                            placeholder={mobiles3.video}
+                            placeholder="Short Video - Url Short"
                             value={video}
                             onChange={e => setVideo(e.target.value)}
                         />                       

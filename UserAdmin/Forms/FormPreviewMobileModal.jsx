@@ -3,10 +3,10 @@ import useReferencia from '../hooks/useReferencia';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const FormPreviewMobile = ({mobiles3}) => {
+const FormPreviewMobile = ({}) => {
 
     const params = useParams()
-    const { LoadReference, ref } = useReferencia()
+    const { LoadReference, ref, mobiles2 } = useReferencia()
     
      // Iframe Body Onclick
   const [id, setId] = useState('')
@@ -18,12 +18,12 @@ const FormPreviewMobile = ({mobiles3}) => {
 
   useEffect(() => {
       if(params.id ) {
-          setId(mobiles3.id)
-          setCode(mobiles3.code)
-          setDate(mobiles3.date)
-          setReferenceid(mobiles3.Referenceid)
-          setVideo(mobiles3.video)
-          setBattery(mobiles3.battery)
+          setId(mobiles2.id)
+          setCode(mobiles2.code)
+          setDate(mobiles2.date)
+          setReferenceid(mobiles2.Referenceid)
+          setVideo(mobiles2.video)
+          setBattery(mobiles2.battery)
           return
       } 
       setId('')

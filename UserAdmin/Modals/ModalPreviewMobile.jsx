@@ -1,10 +1,14 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import useReferencia from '../hooks/useReferencia'
-import FormularioReferenciaAdminEditar from './FormularioReferenciaAdminEditar'
+import FormPreviewMobileModal from '../Forms/FormPreviewMobileModal'
+import { useState, useEffect } from 'react'
 
 
-const ModalEditarMobile = () => {
+const ModalPreviewMobile = ({mobiles3}) => {
+
+    
+  const [code3, setCode3] = useState({})
 
     const refresh = () => {
         try {                     
@@ -14,13 +18,19 @@ const ModalEditarMobile = () => {
         }
         
     }
+    useEffect(() => {
+        const c0d33 = document.getElementById("c0d3")
+        setCode3(c0d33)
+    },)
 
-    const {modalEditarMobile, HandleEditarMobile} = useReferencia()
+    console.log("aqui", code3)
+
+    const {modalPreviewMobile, HandlePreviewMobile} = useReferencia()
  
     return (
-        <Transition.Root show={ modalEditarMobile } as={Fragment}>
-            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandleEditarMobile }>
-                <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <Transition.Root show={ modalPreviewMobile } as={Fragment}>
+            <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={ HandlePreviewMobile }>
+                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -31,12 +41,12 @@ const ModalEditarMobile = () => {
                         leaveTo="opacity-0"
                     >
                         <Dialog.Overlay 
-                            className="flex inset-0 bg-opacity-75 transition-opacity" 
+                            className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" 
                         />
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
-                    <span className="overflow-visible sm:inline-block sm:align-middle sm:h-screen" aria-hidden="false">
+                    <span className="hidden sm:inline-block lg:inline-table sm:align-middle sm:h-screen lg:h-fit lg:w-fit lg:align-top" aria-hidden="true">
                         &#8203;
                     </span>
 
@@ -49,12 +59,12 @@ const ModalEditarMobile = () => {
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                            <div className="sm:inline-block align-bottom rounded-lg px-4 pt-5 pb-4 text-left transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                            <div className="inline-block lg:inline-table align-bottom rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
 
-                            <div className="overflow-visible sm:block absolute top-0 right-0 pt-4 pr-4">
+                            <div className="lg:hidden sm:block absolute top-0 right-0 pt-4 pr-4">
                                 <button
                                     type="button"
-                                    className="bg-white rounded-md absolute flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     onClick={ refresh }
                                 >
                                 <span className="sr-only">Cerrar</span>
@@ -69,7 +79,9 @@ const ModalEditarMobile = () => {
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900 ">
                                         
                                     </Dialog.Title>
-                                    <FormularioReferenciaAdminEditar/>
+                                    <FormPreviewMobileModal
+                                    key={mobiles3.code}
+                                    mobiles3={mobiles3}/>
                                 </div>
                             </div>
                         </div>
@@ -80,4 +92,4 @@ const ModalEditarMobile = () => {
     )
 }
 
-export default ModalEditarMobile
+export default ModalPreviewMobile

@@ -1,4 +1,4 @@
-const Banner = () => {
+const BannerMobile = () => {
   return (
     <>
         <div className="bg-[#481373] rounded-[18.91px] w-[100px] lg:w-[1300px] xl:w-[1365px] h-fit lg:h-[369px]
@@ -10,4 +10,4 @@ const Banner = () => {
   )
 }
 
-export default Banner
+export default BannerMobile

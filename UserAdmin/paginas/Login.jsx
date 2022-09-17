@@ -1,7 +1,11 @@
+// Elementos React
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+// Url Cliente Axios Servidor [Backend]
 import clienteAxios from '../config/clienteAxios'
+// Autenticador de Sessión
 import useAuth from '../hooks/useAuth'
+// Respuestas de Alertas o Errores
 import Alerta from '../components/Alerta'
 
 const Login = () => {
@@ -29,7 +33,7 @@ const Login = () => {
             setAlerta({})
             localStorage.setItem('token', data.token)
             setAuth(data)
-            navigate('/perfil')
+            navigate('/')
         } catch (error) {
             setAlerta({
                 msg: error.response.data.msg,
