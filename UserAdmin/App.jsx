@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //Pagina Home Usuario & Admin
 import MainUserAdmin from '../UserAdmin/paginas/MainUserAdmin'
-import MainMobileUserAdmin from '../UserAdmin/paginas/MainMobileUserAdmin'
+import MainMobileUserAdmin from './paginas/MainMobileUserAdmin'
 // Login Secreto Admin
 import Login from '../UserAdmin/paginas/Login'
 // Forms

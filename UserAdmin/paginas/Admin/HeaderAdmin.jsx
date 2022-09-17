@@ -1,6 +1,6 @@
-import useReferencia from '../hooks/useReferencia';
+import useReferencia from '../../hooks/useReferencia';
 import {useState } from 'react'
-import useAuth from '../hooks/useAuth'
+import useAuth from '../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
 const HeaderAdmin = () => {

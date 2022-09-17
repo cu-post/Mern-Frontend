@@ -1,4 +1,4 @@
-import useReferencia from '../hooks/useReferencia';
+import useReferencia from '../../hooks/useReferencia';
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 

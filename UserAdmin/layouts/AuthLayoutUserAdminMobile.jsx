@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom'
 // Autenticador de Sesiòn
 import useAuth from '../hooks/useAuth'
 // Elementos AuthLayoutUserMobile
-import HeaderMobile from '../paginas/HeaderMobile'
-import BannerMobile from '../paginas/BannerMobile'
-import DispositivosTitleMobile from '../paginas/DispositivosTitleMobile'
+import HeaderMobile from '../paginas/User/HeaderMobile'
+import BannerMobile from '../paginas/User/BannerMobile'
+import DispositivosTitleMobile from '../paginas/User/DispositivosTitleMobile'
 // Elementos AuthLayouAdminMobile
-import HeaderMobileAdmin from '../paginas/HeaderMobileAdmin'
-import DispositivosTitleMobileAdmin from '../paginas/DispositivosTitleMobileAdmin'
+import HeaderMobileAdmin from '../paginas/Admin/HeaderMobileAdmin'
+import DispositivosTitleMobileAdmin from '../paginas/Admin/DispositivosTitleMobileAdmin'
 import ModalAñadirReferenciaMobile from '../Modals/ModalAñadirReferenciaMobile'
 // Hook de Referencia del Provider
 import useReferencia from '../hooks/useReferencia'

@@ -3,13 +3,13 @@ import { Outlet } from 'react-router-dom'
 // Autenticador de Sesiòn
 import useAuth from '../hooks/useAuth'
 // Elementos AuthLayoutUser
-import Header from '../paginas/Header'
-import Banner from '../paginas/Banner'
-import DispositivosTitle from '../paginas/DispositivosTitle'
+import Header from '../paginas/User/Header'
+import Banner from '../paginas/User/Banner'
+import DispositivosTitle from '../paginas/User/DispositivosTitle'
 // Elementos AuthLayouAdmin
-import HeaderAdmin from '../paginas/HeaderAdmin'
-import BannerAdmin from '../paginas/BannerAdmin'
-import DispositivosTitleAdmin from '../paginas//DispositivosTitleAdmin'
+import HeaderAdmin from '../paginas/Admin/HeaderAdmin'
+import BannerAdmin from '../paginas/Admin/BannerAdmin'
+import DispositivosTitleAdmin from '../paginas/Admin/DispositivosTitleAdmin'
 import ModalAñadirReferencia from '../Modals/ModalAñadirReferencia'
 // Hook de Referencia del Provider
 import useReferencia from '../hooks/useReferencia'
