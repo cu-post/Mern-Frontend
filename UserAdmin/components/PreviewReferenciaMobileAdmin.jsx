@@ -1,21 +1,19 @@
-import React from 'react'
-import useReferencia from '../hooks/useReferencia'
-import ModalPreviewMobile from '../Modals/ModalPreviewMobile'
+import PreviewModalReferencia from '../Modals/PreviewModalReferencia'
 import ModalEditarMobileAdmin from '../Modals/ModalEditarMobileAdmin'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
-  const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
+  const [showModal, setShowModal] = useState(false);
 
     // Iframe Body Onclick
-useEffect(() => {
-  const iframeclick = async () => {
-    const bodyt = await document.getElementById(mobiles3.code).contentWindow.document.body
-    bodyt.onclick = () => handleModalMostrarMobile(mobiles3)
-      }
-    iframeclick()
-}, [])  
+    useEffect(() => {
+      const iframeclick = async () => {
+        const bodyt1 = await document.getElementById(mobiles3.code).contentWindow.document.body
+        bodyt1.onclick = () => setShowModal(true)
+          }
+        iframeclick()
+    }, [])  
 
 
   return (
@@ -50,9 +48,12 @@ useEffect(() => {
               </div>
             </div>
           </button>      
-    </div>    
-    <ModalPreviewMobile
-    mobiles3={mobiles3}/>
+    </div>
+    {showModal ? (
+          <PreviewModalReferencia
+          setShowModal={setShowModal}
+          mobiles3={mobiles3}/>
+      ) : null}
     <ModalEditarMobileAdmin
     mobiles3={mobiles3}/>
   </>

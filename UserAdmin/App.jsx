@@ -16,12 +16,6 @@ import {ReferenciaProvider} from '../UserAdmin/context/ReferenciaProvider'
 import AuthLayoutUserAdminReferencias from '../UserAdmin/layouts/AuthLayoutUserAdminReferencias'
 import AuthLayouUserAdmintMobile from '../UserAdmin/layouts/AuthLayoutUserAdminMobile'
 
-// 
-// <Route path="/mobileAdmin/:id" element={<AuthLayoutMobileAdmin/>}>
-// <Route index element={<MainMobileAdmin />} />                          
-// <Route path="modelo/:id" element={<FormPreviewMobileAdmin />} />
-// </Route>
-
 
 function App() {
 
