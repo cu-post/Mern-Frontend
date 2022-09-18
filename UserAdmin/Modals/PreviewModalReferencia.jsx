@@ -41,7 +41,7 @@ const { ref } = useReferencia()
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
-                    Close
+                    Cerrar
                   </button>
                 </div>
               </div>
