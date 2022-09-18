@@ -1,5 +1,6 @@
 import useReferencia from '../hooks/useReferencia'
 import ModalEditarMobileAdmin from '../Modals/ModalEditarMobileAdmin'
+import PreviewModalReferencia from '../Modals/PreviewModalReferencia'
 import { useEffect, useState } from 'react'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
