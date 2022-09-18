@@ -1,19 +1,20 @@
-import PreviewModalReferencia from '../Modals/PreviewModalReferencia'
+import useReferencia from '../hooks/useReferencia'
 import ModalEditarMobileAdmin from '../Modals/ModalEditarMobileAdmin'
 import { useEffect, useState } from 'react'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
+  const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
   const [showModal, setShowModal] = useState(false);
 
-    // Iframe Body Onclick
-    useEffect(() => {
-      const iframeclick = async () => {
-        const bodyt1 = await document.getElementById(mobiles3.code).contentWindow.document.body
-        bodyt1.onclick = () => setShowModal(true)
-          }
-        iframeclick()
-    }, [])  
+  // Iframe Body Onclick
+  useEffect(() => {
+    const iframeclick = async () => {
+      const bodyt1 = await document.getElementById(mobiles3.code).contentWindow.document.body
+      bodyt1.onclick = () => setShowModal(true)
+        }
+      iframeclick()
+  }, []) 
 
 
   return (
