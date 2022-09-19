@@ -2,6 +2,7 @@ import useReferencia from "../hooks/useReferencia"
 import { useParams } from 'react-router-dom'
 
 const PreviewModalReferencia = ({setShowModal, mobiles3}) => {
+  
 const { ref } = useReferencia()
   const params = useParams()
   const mobilefiltrado = ref.filter(function(el){
@@ -47,7 +48,7 @@ const { ref } = useReferencia()
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          <div className=" opacity-50 fixed inset-0 z-40 bg-black"></div>
     </>
   )
 }

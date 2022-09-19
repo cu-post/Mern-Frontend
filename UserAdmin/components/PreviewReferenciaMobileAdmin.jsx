@@ -1,12 +1,11 @@
-import useReferencia from '../hooks/useReferencia'
-import ModalEditarMobileAdmin from '../Modals/ModalEditarMobileAdmin'
+import PreviewModalEditar from '../Modals/PreviewModalEditar'
 import PreviewModalReferencia from '../Modals/PreviewModalReferencia'
 import { useEffect, useState } from 'react'
 
 const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
 
-  const { handleModalMostrarMobile, handleModalEditarMobileadmin } = useReferencia()
   const [showModal, setShowModal] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
 
   // Iframe Body Onclick
   useEffect(() => {
@@ -23,7 +22,7 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
     <div className=' bg-white hover:bg-[#481373] h-[394.07px] w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1 relative border border-black text-black hover:text-white flex flex-col '>
       <div className='flex justify-end relative'>
         <button 
-        onClick={() => handleModalEditarMobileadmin(mobiles3)}
+        onClick={() => setShowModal1(true)}
         className='bg-white border border-black w-fit px-4 py-1 text-[#8F00FF] uppercase font-bold rounded-[22.38px] text-sm'>
           Editar
         </button>
@@ -39,7 +38,7 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
           >
           </iframe>
           </div>     
-          <button onClick={() => handleModalMostrarMobile(mobiles3)} className='flex-col items-center flex'>
+          <button onClick={() => setShowModal(true)} className='flex-col items-center flex'>
             <div className='w-fit justify-center flex'>
               <div 
               className='bg-white w-fit px-4 py-1 text-[#8F00FF] font-bold text-[14.9167px] rounded-[22.38px] absolute bottom-1 border border-black'>
@@ -56,8 +55,11 @@ const PreviewReferenciaMobileAdmin = ({mobiles3}) => {
           setShowModal={setShowModal}
           mobiles3={mobiles3}/>
       ) : null}
-    <ModalEditarMobileAdmin
-    mobiles3={mobiles3}/>
+    {showModal1 ? (
+          <PreviewModalEditar
+          setShowModal1={setShowModal1}
+          mobiles3={mobiles3}/>
+      ) : null}
   </>
     
   )
