@@ -105,7 +105,6 @@ const ReferenciaProvider = ({children}) => {
         if(ref1.code) {
             await editarReferenciaMobile(ref1)  
         } else {
-            console.log("Nuevito")
             await nuevoReferenciaMobile(ref1)
         }
     }
@@ -123,7 +122,7 @@ const ReferenciaProvider = ({children}) => {
         setTimeout(() => {
             setAlerta({})
             window.location.reload();
-        }, 3000);
+        }, 1000);
 
           } catch (error) {setAlerta({
             msg: 'Sin Short Url',
@@ -132,7 +131,7 @@ const ReferenciaProvider = ({children}) => {
 
         setTimeout(() => {
             setAlerta({})
-        }, 3000);
+        }, 1000);
         }
     }
     
@@ -219,7 +218,11 @@ const ReferenciaProvider = ({children}) => {
           } catch (error) {setAlerta({
             msg: `[${error}], Problemas!`,
             error: true
-        })
+        })       
+
+        setTimeout(() => {
+            setAlerta({})
+        }, 3000);
         }
     }
 

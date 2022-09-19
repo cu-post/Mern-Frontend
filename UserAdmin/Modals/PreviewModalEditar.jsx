@@ -142,11 +142,11 @@ const PreviewModalEditar = ({setShowModal1, mobiles3}) => {
                     <input
                         type="submit"
                         value={mobiles3.id ? 'Actualizar Mobile': 'Crear Mobile'}
-                        className='bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
+                        className='bg-white w-full text-sm sm:text-lg p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                         
                     />
                     <button 
-                    className='mt-3 bg-white w-full p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
+                    className='mt-3 bg-white w-full text-sm sm:text-lg p-3 uppercase font-bold text-[#8F00FF] rounded cursor-pointer hover:bg-sky-700 transition-colors'
                     onClick={handleClick}>Eliminar El Mobile?</button>
             </form>            
             </div>

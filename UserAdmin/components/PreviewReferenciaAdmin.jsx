@@ -1,10 +1,9 @@
-import React from 'react'
-import useReferencia from '../hooks/useReferencia'
-import ModalEditarMobile from '../Modals/ModalEditarMobile'
+import PreviewReferenciaEditar from '../Modals/PreviewReferenciaEditar'
+import { useState } from 'react'
 
 const PreviewReferenciaAdmin = ({reff}) => {
-
-  const { handleModalEditarMobile } = useReferencia()
+  
+  const [showModal2, setShowModal2] = useState(false);
 
   const { reference, img, id, agotado } = reff
 
@@ -13,7 +12,7 @@ const PreviewReferenciaAdmin = ({reff}) => {
     <div className=' bg-white hover:bg-[#481373] h-[394.07px] w-[240.17px] gap-1 p-2 rounded-[24.43px] m-1 relative border border-black text-black hover:text-white '>
       <div className='flex justify-end'>
         <button 
-        onClick={() => handleModalEditarMobile(reff)}
+        onClick={() => setShowModal2(true)}
         className='bg-white border border-black w-fit px-4 py-1 text-[#8F00FF] uppercase font-bold rounded-[22.38px] text-sm'>
           Editar
         </button>
@@ -40,7 +39,11 @@ const PreviewReferenciaAdmin = ({reff}) => {
         </div>          
       </a>
     </div>
-    <ModalEditarMobile/>
+    {showModal2 ? (
+          <PreviewReferenciaEditar
+          setShowModal2={setShowModal2}
+          reff={reff}/>
+      ) : null}
   </>
     
   )

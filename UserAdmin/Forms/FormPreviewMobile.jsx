@@ -39,6 +39,9 @@ const FormPreviewMobile = () => {
                 </div>
                 <div className=''>
                     Codigo: {mobile.code}
+                </div>                
+                <div className=''>
+                    Batería: {mobile.battery}%
                 </div>
             </div>
         </div>
